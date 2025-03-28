@@ -14,8 +14,9 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+print('BASE_DIR:', BASE_DIR)
+print('TEMPLATES_DIR:', TEMPLATES_DIR)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'home',
 ]
 
 SITE_ID = 1
@@ -64,7 +66,10 @@ ROOT_URLCONF = 'ecommerce.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            TEMPLATES_DIR,
+            os.path.join(BASE_DIR, 'templates', 'allauth')
+            ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,6 +81,8 @@ TEMPLATES = [
         },
     },
 ]
+#x=os.path.join(BASE_DIR, 'templates', 'allauth')
+#print('x', os.path.join(BASE_DIR, 'templates', 'allauth'))
 
 AUTHENTICATION_BACKENDS = [
     
