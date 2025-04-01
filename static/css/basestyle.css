@@ -9,9 +9,9 @@ html {
 }
 
 body {
-    background: url('/media/lap1.jpg') no-repeat center center fixed;
-    background: url('../../media/lap1.jpg') no-repeat center center fixed;
-    background: url('/static/css/lap1.jpg') no-repeat center center fixed;
+    background: url('/media/lap1xxx.jpg') no-repeat center center fixed;
+    background: url('../../media/lap1xx.jpg') no-repeat center center fixed;
+    background: url('/static/css/lap1xx.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
@@ -71,12 +71,14 @@ body {
 .border-black {
     border: 1px solid black !important;
 }
-
+.bg-black {
+    background: #000 !important;
+}
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
-  .xxcontainer {
+  .XXcontainer {
     max-width: 80%;
   }
 }
@@ -91,7 +93,7 @@ body {
         z-index: 1030;
     }
 
-    .xxheader-container {
+    .XXheader-container {
         padding-top: 164px;
     }
 }
