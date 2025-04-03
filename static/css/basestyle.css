@@ -17,6 +17,10 @@ body {
     color: #555;
     font-family: 'Lato';
 }
+
+.header-container {
+    padding-top: 117px;
+}
 .test {
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
@@ -74,6 +78,15 @@ body {
 .bg-black {
     background: #000 !important;
 }
+.overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: white;
+    z-index: -1;
+}
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
@@ -93,7 +106,7 @@ body {
         z-index: 1030;
     }
 
-    .XXheader-container {
+    .header-container {
         padding-top: 164px;
     }
 }
