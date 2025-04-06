@@ -41,4 +41,4 @@ class Product(models.Model):
         #verbose_name_plural = "AllBrands"
 
     def __str__(self):
-        return self
+        return self.name
