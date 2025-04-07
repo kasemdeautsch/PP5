@@ -94,6 +94,9 @@ body {
     left: 30%;
     top: 30%;
 }
+.product-ul {
+    margin-left: -20px;
+}
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
