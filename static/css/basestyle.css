@@ -1,9 +1,9 @@
 
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
-/*@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-*/
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap');
+
 html {
     height: 100%;
 }
@@ -12,10 +12,18 @@ body {
     /*background: url('/media/lap1.jpg') no-repeat center center fixed;
     /*background: url('../../media/lap1xx.jpg') no-repeat center center fixed;
     background: url('/static/css/lap1xx.jpg') no-repeat center center fixed;
-    background-size: cover;*/
+    background-size: cover;
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;*/
     height: calc(100vh - 164px);
     color: #555;
-    font-family: 'Lato';
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    
 }
 
 
