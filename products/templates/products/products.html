@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% load static %}
-
+<!-- This template is the code institue idea with customisation -->
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -16,6 +16,12 @@
     <div class="row">
         <div class="col text-center mt-3">
            <h2 class="logo-font">Products</h2>
+           {% for brand in current_brands %}
+                <a class="category-badge text-decoration-none" href="{% url 'products' %}?brand_category={{ brand.name }}">
+                    <span class="p-2 mt-2 badg badg-white text-black rounded-0 border border-dark">{{ brand.name }}</span>
+                </a>
+                
+           {% endfor %}
            <hr class="w-50 mb-1">
         </div>
     </div>
@@ -47,10 +53,13 @@
                                         <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
 
                                         {% if product.brand_category %}
-                                        <p>
-                                            
-                                        </p>
+                                            <p class="small mt-1 mb-0">
+                                                <a class="text-muted" href="{% url 'products'%}?brand_category={{ product.brand_category.name }}">
+                                                    <i class="fas fa-tag mr-1"></i>{{ product.brand_category.name }}
+                                                </a>
+                                            </p>
                                         {% endif %}
+
                                         {% if product.rating %}
                                             <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                                         {% else %}
