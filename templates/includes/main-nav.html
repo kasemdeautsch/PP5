@@ -5,9 +5,9 @@
                 All Products
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item ">By Rating</a>
-                <a href="" class="dropdown-item ">By Category & Brand</a>
+                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
+                <a href="{% url 'products' %}?sort=brand_category&direction=asc" class="dropdown-item ">By Category & Brand</a>
                 <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
             </div>
         </li>
@@ -17,8 +17,6 @@
                 Brands
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                
-                         
                 <a href="{% url 'products' %}?brand_category=dell" class="dropdown-item">Dell</a>
                 <a href="{% url 'products' %}?brand_category=apple" class="dropdown-item">Apple</a>
                 <a href="{% url 'products' %}?brand_category=lenovo" class="dropdown-item">Lenovo</a>
