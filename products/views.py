@@ -24,11 +24,17 @@ def all_products(request):
                 sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
 
+            if sortkey == 'brand_category':
+                sortkey = 'brand_category__name'
+
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
+            
             products = products.order_by(sortkey)
+            print('sortkey-->:', sortkey)
+            print('products-->:', products)
 
         if 'brand_category' in request.GET:
             brands = request.GET['brand_category'].split(',')
