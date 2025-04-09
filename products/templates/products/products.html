@@ -39,8 +39,8 @@
                             <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
                             <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
                             <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
-                            <option value="category_asc" {% if current_sorting == 'brand_category_asc' %}selected{% endif %}>Brand & Category (A-Z)</option>
-                            <option value="category_desc" {% if current_sorting == 'brand_category_desc' %}selected{% endif %}>Brand & Category (Z-A)</option>
+                            <option value="brand_category_asc" {% if current_sorting == 'brand_category_asc' %}selected{% endif %}>Brand & Category (A-Z)</option>
+                            <option value="brand_category_desc" {% if current_sorting == 'brand_category_desc' %}selected{% endif %}>Brand & Category (Z-A)</option>
                         </select>
                     </div>
                 </div>
@@ -125,9 +125,55 @@
         </div>
     </div>
 </div>
-  
 
-    
+<div class="btt-button shadow-sm rounded-0 border border-black">
+    <a class="btt-link d-flex h-100">
+        <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+    </a>
+</div>
 
-    
+{% endblock %}
+
+{% block loadjs %}
+    {{ block.super }}
+
+    <script type="text/javascript">
+        $('.btt-link').click(function(e){
+            window.scrollTo(0,0)
+        })
+    </script>
+
+    <script type="text/javascript">
+    $('#sort-selector').change(function(e){
+        //console.log('chenged..');
+        var selector = $(this);
+        var currentUrl = new URL(window.location);
+        //console.log(selector);
+        //console.log(currentUrl);
+        //console.log('-----');
+        //console.log('window.location: ', window.location);
+        //window.location=`${currentUrl}?sort=price&direction=asc`;
+
+        var selectedVal = selector.val();
+        //console.log(selectedVal)
+        if(selectedVal != "reset"){
+            var sort = selectedVal.split('_')[0];
+            var direction = selectedVal.split('_')[1];
+            //console.log(sort,'_',direction);
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
+            //console.log('window.location: ', window.location);
+            //console.log('currentUrl: ', currentUrl);
+            window.location.replace(currentUrl);
+        }
+        else{
+            currentUrl.searchParams.delete("sort");
+            currentUrl.searchParams.delete("direction");
+            console.log('currentUrl: ', currentUrl);
+            window.location.replace(currentUrl);
+        }
+
+    })
+
+    </script>
 {% endblock %}
