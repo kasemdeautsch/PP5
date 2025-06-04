@@ -3,9 +3,12 @@ from django.contrib import messages
 from django.db.models import Q
 from django.db.models.functions import Lower
 from .models import Product, Brand
+
 # Create your views here.
 
+
 def all_products(request):
+  
     """ A view to show all products, including sorting and search queries """
 
     products = Product.objects.all()
@@ -38,6 +41,7 @@ def all_products(request):
             print('products-->:', products)
 
         if 'brand_category' in request.GET:
+            #print("request.GET-->", request.GET.get)
             brands = request.GET['brand_category'].split(',')
             print('brands1:-->', brands)
             products = products.filter(brand_category__name__in=brands)
