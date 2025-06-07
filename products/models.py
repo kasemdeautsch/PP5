@@ -16,23 +16,24 @@ class Brand(models.Model):
 
 class Product(models.Model):
 
-    brand_category = models.ForeignKey('Brand', null=True, blank=True, on_delete=models.SET_NULL)
-    sku = models.CharField(max_length=254, null=True, blank=True)
+    brand_category = models.ForeignKey('Brand', null=True, blank=True, on_delete=models.SET_NULL) # null
+    sku = models.CharField(max_length=254, null=True, blank=True) # null
+
     name = models.CharField(max_length=254)
-    
     display = models.CharField(max_length=254)
     processor = models.CharField(max_length=254)
     memory = models.CharField(max_length=254)
     storage = models.CharField(max_length=254)
     graphics = models.CharField(max_length=254)
-    warranty = models.CharField(max_length=254, null=True, blank=True)
-    operating_system = models.CharField(max_length=254, null=True, blank=True)
 
-    availability = models.BooleanField(default=True, null=True, blank=True)
+    warranty = models.CharField(max_length=254, null=True, blank=True)# null
+    operating_system = models.CharField(max_length=254, null=True, blank=True)# null
+
+    availability = models.BooleanField(default=True, null=True, blank=True)# null
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
-    image_url = models.URLField(max_length=1024, null=True, blank=True)
-    image = models.ImageField(null=True, blank=True)
+    rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)# null
+    image_url = models.URLField(max_length=1024, null=True, blank=True)# null
+    image = models.ImageField(null=True, blank=True)# null
 
     class Meta:
 
