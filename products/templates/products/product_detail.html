@@ -31,29 +31,39 @@
             <div class="product-details-container mb-5 mt-sm-5 pt-sm-5">
                 <p class="mb-0">{{ product.name }}</p>
                 <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
-                {% if product.brand_category %}
+                {% if product.brand %}
                     <p class="small mt-1 mb-0">
-                        <a class="text-muted" href="{% url 'products'%}?brand_category={{ product.brand_category.name }}">
-                            <i class="fas fa-tag mr-1"></i>{{ product.brand_category.other_name }}
+                        <a class="text-muted" href="{% url 'products'%}?brand={{ product.brand.name }}">
+                            <i class="fas fa-tag mr-1"></i>{{ product.brand.other_name }}
                         </a>
                     </p>
                 {% endif %}
                 {% if product.rating %}
-                    <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                    <small class="text-muted"><i class="fa-solid fa-face-smile mr-1"></i>{{ product.rating }} / 5</small>
                 {% else %}
                     <small class="text-muted">No Rating</small>
                 {% endif %}
                 <p class="">Sku: <span class="ml-1">{{ product.sku }}</span> </p>
                 <p class="my-1"><strong>Product specifications:</strong></p>
                 <ul class="product-ul">
-                    
-                    <li>{{ product.display }}</li>
-                    <li>{{ product.processor }}</li>
-                    <li>{{ product.memory }}</li>
-                    <li>{{ product.storage }}</li>
-                    <li>{{ product.graphics }}</li>
-                    <li>{{ product.operating_system }}</li>
-                    <li>{{ product.warranty }}</li>
+                    {% if product.display %}
+                        <li>{{ product.display }}</li>
+                    {% endif %}
+                    {% if product.processor %}
+                        <li>{{ product.processor }}</li>
+                    {% endif %}
+                    {% if product.memory %}
+                        <li>{{ product.memory }}</li>
+                    {% endif %}
+                    {% if product.graphics %}
+                        <li>{{ product.graphics }}</li>
+                    {% endif %}
+                    {% if product.operating_system %}
+                        <li>{{ product.operating_system }}</li>
+                    {% endif %}
+                    {% if product.warranty %}
+                        <li>{{ product.warranty }}</li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
