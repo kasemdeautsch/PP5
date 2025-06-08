@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+<!-- This template is the code institue idea with customisation -->
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <hr>
+                <h2 class="logo-font mb-3">Shopping Bag</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                {% if bag_items %}
+                    <div class="table-responsive rounded"></div>
+            
+                {% else %}
+                    <p class="lrad mb-4">Your Bag is empty</p>
+                    <a href="{% url 'products' %}" class="btn btn-info rounded-0">
+                        <span class="icon">
+                            <i class="fa-solid fa-angles-left"></i>
+                        </span>
+                        <span class="text-uppercase">Keep shopping</span>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
