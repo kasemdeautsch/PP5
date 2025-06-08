@@ -44,11 +44,11 @@
   </head>
   <body>
     <!-- Base template is the code institue idea with customisation -->
-    <header class="container-fluid sticky-top">
-        <div id="top-nav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+    <header class="container-fluid sticky-top topdown-color">
+        <div id="top-nav" class="row pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <h2 class="logo-font text-black my-0"><strong>Bisi</strong> Home</h2>
+                    <h2 class="logo-font text-black my-0"><strong>Alma-</strong>Store</h2>
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
@@ -90,7 +90,7 @@
                     <li class="list-inline-item">
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="">
                             <div class="text-center">
-                              <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                              <div><i class="fa-solid fa-cart-shopping fa-lg"></i></div>
                               <p class="my-0">
                                 {% if grand_total %}
                                   ${{ grand_total|floatformat:2 }}
@@ -104,7 +104,7 @@
                 </ul>
             </div>
         </div>
-        <div class="row bg-white">
+        <div class="row">
             <nav class="navbar navbar-expand-lg navbar-light w-100">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
                   aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -115,9 +115,10 @@
                 {% include 'includes/main-nav.html' %}
             </nav>
         </div>
+        
         <div id="delivery-banner" class="row text-center">
-            <div class="col bg-black text-white">
-                <h4 class="logo-font my-1">Free delivery on orders over ${{ free_shipping_threeshold }}</h4>
+            <div class="col text-white">
+                <h4 class="logo-font my-1">Wellcome to <em>Alma-Store</em></h4>
             </div>
         </div>
     </header>
@@ -136,7 +137,7 @@
     </main>
 
     <!-- Footer -->
-      <footer class="container-wrapper text-black pb-2">
+      <footer class="container-wrapper text-black pb-2 topdown-color">
         <div class="container-fluid quotes-container content-container">
           <section class="footer">
             <div class="row">
@@ -180,17 +181,6 @@
                               <div class="optionalParent">
                                   <div class="clear foot">
                                       <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
-                                      <!--
-                                      <p style="margin: 0px auto;">
-                                        <a href="http://eepurl.com/jgmQR6" title="Mailchimp - email marketing made easy and fun">
-                                          <span style="display: inline-block; background-color: transparent; border-radius: 4px;">
-                                            <img class="refferal_badge" 
-                                            src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" 
-                                            alt="Intuit Mailchimp" 
-                                            style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;">
-                                          </span>
-                                        </a>
-                                      </p>-->
                                   </div>
                               </div>
                             </div>
