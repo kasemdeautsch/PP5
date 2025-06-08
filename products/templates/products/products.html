@@ -30,7 +30,7 @@
            <h2 class="logo-font">Products</h2>
            <p>current_brands{{ current_brands }}</p>
            {% for brand in current_brands %}
-                <a class="category-badge text-decoration-none" href="{% url 'products' %}?brand_category={{ brand.name }}">
+                <a class="category-badge text-decoration-none" href="{% url 'products' %}?brand={{ brand.name }}">
                     <span class="p-2 mt-2 badge badg-white text-black rounded-0 border border-dark">{{ brand.other_name }}</span>
                 </a>
                 
@@ -51,8 +51,8 @@
                             <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
                             <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
                             <option value="name_desc" {% if current_sorting == 'name_desc' %}selected{% endif %}>Name (Z-A)</option>
-                            <option value="brand_category_asc" {% if current_sorting == 'brand_category_asc' %}selected{% endif %}>Brand & Category (A-Z)</option>
-                            <option value="brand_category_desc" {% if current_sorting == 'brand_category_desc' %}selected{% endif %}>Brand & Category (Z-A)</option>
+                            <option value="brand_asc" {% if current_sorting == 'brand_asc' %}selected{% endif %}>Brand (A-Z)</option>
+                            <option value="brand_desc" {% if current_sorting == 'brand_desc' %}selected{% endif %}>Brand (Z-A)</option>
                         </select>
                     </div>
                 </div>
@@ -92,10 +92,10 @@
                                     <div class="col">
                                         <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
 
-                                        {% if product.brand_category %}
+                                        {% if product.brand %}
                                             <p class="small mt-1 mb-0">
                                                 <a class="text-muted" href="{% url 'products'%}?brand_category={{ product.brand_category.name }}">
-                                                    <i class="fas fa-tag mr-1"></i>{{ product.brand_category.other_name }}
+                                                    <i class="fas fa-tag mr-1"></i>{{ product.brand.other_name }}
                                                 </a>
                                             </p>
                                         {% endif %}
@@ -174,8 +174,8 @@
             //console.log(sort,'_',direction);
             currentUrl.searchParams.set("sort", sort);
             currentUrl.searchParams.set("direction", direction);
-            //console.log('window.location: ', window.location);
-            //console.log('currentUrl: ', currentUrl);
+            console.log('window.location: ', window.location);
+            console.log('currentUrl: ', currentUrl);
             window.location.replace(currentUrl);
         }
         else{

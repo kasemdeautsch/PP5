@@ -57,7 +57,7 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <form method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
-                      <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search" value="Enter product name/processor model to search for">
+                      <input class="form-control border border-black rounded-0" type="text" name="find" placeholder="Search" value="Enter product name/processor model to search for">
                       <div class="input-group-append">
                         <button class="form-control btn btn-black border border-black rounded-0" type="submit">
                           <span class="icon">
@@ -74,7 +74,7 @@
                         <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user fa-lg"></i></div>
-                                <p class="my-0">My Account</p>
+                                <p class="my-0">Accounts & Profiles</p>
                             </div>
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
@@ -128,13 +128,13 @@
 
    
     {% if messages %}
-        <div class="medssage-container">XX</div>
+        <div class="medssage-container">Messages</div>
     {% endif %}
 
     {% block page_header %}
     {% endblock %}
 
-    <main>
+    <main class="mb-5">
       {% block content %}
       {% endblock %}
     </main>

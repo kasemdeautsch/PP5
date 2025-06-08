@@ -28,8 +28,8 @@ def all_products(request):
                 sortkey = 'lower_name'
                 products = products.annotate(lower_name=Lower('name'))
 
-            if sortkey == 'brand_category':
-                sortkey = 'brand_category__name'
+            if sortkey == 'brand':
+                sortkey = 'brand__name'
 
             if 'direction' in request.GET:
                 direction = request.GET['direction']
@@ -40,17 +40,17 @@ def all_products(request):
             print('sortkey-->:', sortkey)
             print('products-->:', products)
 
-        if 'brand_category' in request.GET:
+        if 'brand' in request.GET:
             #print("request.GET-->", request.GET.get)
-            brands = request.GET['brand_category'].split(',')
-            print('brands1:-->', brands)
-            products = products.filter(brand_category__name__in=brands)
-            print('products:-->', products)
+            brands = request.GET['brand'].split(',')
+            #print('brands1:-->', brands)
+            products = products.filter(brand__name__in=brands)
+            #print('products:-->', products)
             brands = Brand.objects.filter(name__in=brands)
-            print('brands2:-->', brands)
+            #print('brands2:-->', brands)
 
-        if 'q' in request.GET:
-            query = request.GET['q']
+        if 'find' in request.GET:
+            query = request.GET['find']
             #print("request.GET['q']:-->", request.GET.get('q','error'))
 
             if not query:
