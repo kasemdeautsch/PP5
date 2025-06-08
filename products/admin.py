@@ -9,7 +9,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = (
         'sku',
         'name',
-        'brand_category',
+        'brand',
         'rating',
         'price',
         'image',

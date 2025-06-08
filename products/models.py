@@ -16,7 +16,7 @@ class Brand(models.Model):
 
 class Product(models.Model):
 
-    brand_category = models.ForeignKey('Brand', null=True, blank=True, on_delete=models.SET_NULL) # null
+    brand = models.ForeignKey('Brand', null=True, blank=True, on_delete=models.SET_NULL) # null
     sku = models.CharField(max_length=254, null=True, blank=True) # null
 
     name = models.CharField(max_length=254)
