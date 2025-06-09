@@ -14,7 +14,7 @@ class ProductAdmin(admin.ModelAdmin):
         'price',
         'image',
     )
-    search_fields =['name']
+    search_fields =['name','sku']
     list_filter = ('sku',)
     ordering = ('sku',)
 
