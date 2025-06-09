@@ -8,6 +8,7 @@ def view_bag(request):
 
     return render(request, 'bag/bag.html')
 
+
 def add_to_bag(request, item_id):
     """
     Add a quantity of the specified product to the bag
@@ -25,8 +26,8 @@ def add_to_bag(request, item_id):
         bag[item_id] = quantity
 
     request.session['bag'] = bag
-    print('request>>> ', request)
-    print('request.session>>> ', request.session)
-    print('request.session[bag]>>> ', request.session['bag'])
+    #print('request>>> ', request)
+    #print('request.session>>> ', request.session)
+    #print('request.session[bag]>>> ', request.session['bag'])
     return redirect(redirect_url)
 
