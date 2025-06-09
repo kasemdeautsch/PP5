@@ -18,8 +18,8 @@ def all_products(request):
     direction = None
 
     if request.GET:
-        print('request.GET:-->', request.GET)
-        print('request:-->', request)
+        #print('request.GET:-->', request.GET)
+        #print('request:-->', request)
 
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
