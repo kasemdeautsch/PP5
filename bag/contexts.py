@@ -40,5 +40,5 @@ def bag_contents(request):
         'free_delivery_delta': free_delivery_delta,
         'grand_total': grand_total,
     }
-    print('context----- ', context)
+    #print('context----- ', context)
     return context
