@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% load static %}
+{% load bag_tools %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -54,7 +55,7 @@
                                             <p class="my-0">${{ item.product.price }}</p>
                                         </td>
                                         <td class="p-3 w-25">
-                                            <form class="form update-form" action="" method="POST">
+                                            <form class="form update-form" action="{% url 'update_bag' item.item_id %}" method="POST">
                                                 {% csrf_token %}
                                                 <div class="form-group">
                                                     <div class="input-group">
@@ -85,7 +86,7 @@
                                             <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove Item</small></a>
                                         </td>
                                         <td class="p-3">
-                                            <p class="my-0">${{ item.product.price }}</p>
+                                            <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity}}</p>
                                         </td>
                                     </tr>
                                 {% endfor %}
@@ -136,8 +137,7 @@
 
 {% block loadjs %}
 {{ block.super }}
-    {% include 'products/includes/quantity_script.html' %}
-{% endblock %}
+{% include 'products/includes/quantity_script.html' %}
 <script type="text/javascript">
     $('.update-link').click(function(e){
         var form = $(this).prev('.update-form');
@@ -146,11 +146,12 @@
     $('.remove-item').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
-        var url = `/bag/remove/${itemId}`;
+        var url = `/bag/remove/${itemId}/`;
         var data = {'csrfmiddlewaretoken': csrfToken}
         $.post(url, data)
-        .done(function() {
+         .done(function() {
             location.reload();
         });
     })
 </script>
+{% endblock %}
