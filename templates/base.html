@@ -127,20 +127,37 @@
         </div>
     </header>
 
-   
+    <!-- displaying Django messages -->
     {% if messages %}
-        <div class="medssage-container">Messages</div>
+      <div class="message-container">
+        {% for message in messages %}
+          {% with message.level as level %}
+            {% if level == 40 %}
+              {% include 'includes/toasts/toast_error.html' %}
+            {% elif level == 30 %}
+              {% include 'includes/toasts/toast_warning.html' %}
+            {% elif level == 25 %}
+              {% include 'includes/toasts/toast_success.html' %}
+            {% else %}
+              {% include 'includes/toasts/toast_info.html' %}
+            {% endif %}
+          {% endwith %}
+        {% endfor %}
+      </div>
     {% endif %}
 
+     <!-- If a page has a header-->
     {% block page_header %}
     {% endblock %}
-
+    
+    <!-- main block contents -->
     <main class="mb-5">
       {% block content %}
       {% endblock %}
     </main>
 
     <!-- Footer -->
+    <!-- The whiskey project idea -->
       <footer class="container-wrapper text-black pb-2 topdown-color">
         <div class="container-fluid quotes-container content-container">
           <section class="footer">
@@ -204,6 +221,8 @@
         </div>
       </footer>
     <!-- /footer -->
+
+    <!-- Script for mailchimp signup form -->
     <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
     <script type="text/javascript">
       (function($) {
@@ -227,10 +246,11 @@
         
     </script>
     {% block loadjs %}
+    <script type="text/javascript">
+      $('.toast').toast('show');
+    </script>
     {% endblock %}
 
-
-    
   </body>
 
 </html>
