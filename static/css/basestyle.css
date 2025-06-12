@@ -140,7 +140,7 @@ a.category-badge > span.badge:hover {
 .toast-capper {
     height:2px;
 }
-
+/* Botique Ado project*/
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
 .arrow-up {
     width: 0; 
@@ -153,7 +153,11 @@ a.category-badge > span.badge:hover {
     right: 36px;
 }
 
+/* Botique Ado project*/
 /* Convenience classes - colors copied from Bootstrap */
+/*convenience classes are just designed to make the color match
+the built-in bootstrap colors such as warning error info success and so on.
+These color codes were pulled directly from bootstrap CSS itself*/
 .arrow-primary {
     border-bottom-color: #007bff !important;
 }
