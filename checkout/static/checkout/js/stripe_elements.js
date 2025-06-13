@@ -27,6 +27,23 @@ var elements = stripe.elements();
       iconColor: '#FFC7EE',
       color: '#FFC7EE',
     },
-  };
-  var card = elements.create('card', {style: style});
+};
+var card = elements.create('card', {style: style});
 card.mount('#card-element');
+
+// Handle real time validation errors from card element
+
+card.addEventListener('change', function(e) {
+    var errorDiv = $('#card-errors');
+    if(e.error) {
+        var html = `
+        <span class="icon" role="alert">
+            <i class="fas fa-times"></i>
+        </span>
+        <span>${e.error.message}..</span>
+        `
+        $(errorDiv).html(html);
+    } else{
+        $(errorDiv).text('')
+    }
+});
