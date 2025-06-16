@@ -31,6 +31,10 @@ body {
     background-color: #6c757d;
 }
 
+.allauth-header2 {
+        padding-top: 116px;
+    }
+
 /* from Bulma */
 .icon {
     align-items: center;
@@ -243,7 +247,7 @@ footerxx {
 }
 /* pad the top a bit when navbar is collapsed on mobile */
 @media (max-width: 991px) {
-    .XXheader-container {
+    .xheader-container {
         padding-top: 116px;
     }
     Xbody {
