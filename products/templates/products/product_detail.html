@@ -46,18 +46,10 @@
                 <p class="">Sku: <span class="ml-1">{{ product.sku }}</span> </p>
                 <p class="my-1"><strong>Product specifications:</strong></p>
                 <ul class="product-ul">
-                    {% if product.display %}
-                        <li>{{ product.display }}</li>
-                    {% endif %}
-                    {% if product.processor %}
-                        <li>{{ product.processor }}</li>
-                    {% endif %}
-                    {% if product.memory %}
-                        <li>{{ product.memory }}</li>
-                    {% endif %}
-                    {% if product.graphics %}
-                        <li>{{ product.graphics }}</li>
-                    {% endif %}
+                    <li>{{ product.display }}</li>
+                    <li>{{ product.processor }}</li>
+                    <li>{{ product.memory }}</li>
+                    <li>{{ product.graphics }}</li>
                     {% if product.operating_system %}
                         <li>{{ product.operating_system }}</li>
                     {% endif %}
