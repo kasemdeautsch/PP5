@@ -128,7 +128,39 @@
             </div>
         </div>
     </header>
-
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <p class="text-black text-right mt-2">
+            {% if user.is_authenticated %}
+              You are logged in as: <em>{{ user }}</em>
+            {% else %}
+                <em class="text-muted small">Not logged in</em>
+            {% endif %}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container d-none d-lg-block">
+      <div class="row">
+        <div class="col">
+          <h3 class="text-black">Search our website</h3>
+          <p>Enter a search term</p>
+          <form class="form" method="GET" action="{% url 'products' %}">
+              <div class="input-group w-100">
+                  <input class="form-control border border-black rounded-0" type="text" name="find" placeholder="Enter product name/processor model to search for">
+                  <div class="input-group-append">
+                      <button class="form-control form-control btn btn-black border border-black rounded-0" type="submit">
+                          <span class="icon">
+                              <i class="fas fa-search"></i>
+                          </span>
+                      </button>
+                  </div>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
     <!-- displaying Django messages -->
     {% if messages %}
       <div class="message-container">
