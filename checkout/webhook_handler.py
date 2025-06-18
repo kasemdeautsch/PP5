@@ -27,7 +27,7 @@ class StripeWH_Handler:
         """
 
         intent = event.data.object
-        print('Intent:----', intent)
+        #print('Intent:----', intent)
 
         intent = event.data.object
         pid = intent.id

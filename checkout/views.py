@@ -6,7 +6,8 @@ from .forms import OrderForm
 from bag.contexts import bag_contents
 from products.models import Product
 from .models import OrderLineItem, Order
-
+from profiles.models import UserProfile
+from profiles.forms import UserProfileForm
 import stripe
 import json
 
@@ -15,7 +16,7 @@ import json
 @require_POST
 def cache_checkout_data(request):
 
-    print('cache_checkout_data received>>')
+    #print('cache_checkout_data received>>')
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -34,7 +35,7 @@ def cache_checkout_data(request):
 
 def checkout(request):
 
-    print('checkout received>>')
+    #print('checkout received>>')
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -74,7 +75,7 @@ def checkout(request):
                     )
                     order.delete()
                     return redirect(reverse('view_bag'))
-            request.session['save_info'] = 'save_info' in request.POST
+            request.session['save_info'] = 'save-info' in request.POST
             return redirect(reverse('checkout_success', args=[order.order_number]))
         else:
             messages.add_message(request, messages.ERROR, (
@@ -97,7 +98,24 @@ def checkout(request):
         )
 
         #print('Intent:---', intent)
-        order_form = OrderForm()
+        if request.user.is_authenticated:
+            try:
+                profile = UserProfile.objects.get(user=request.user)
+                order_form = OrderForm(initial= {
+                    'full_name': profile.user.get_full_name(),
+                    'email': profile.user.email,
+                    'phone_number': profile.default_phone_number,
+                    'country': profile.default_country,
+                    'postcode': profile.default_postcode,
+                    'town_or_city': profile.default_town_or_city,
+                    'street_address1':  profile.default_street_address1,
+                    'street_address2':  profile.default_street_address2,
+                    'county':  profile.default_county,
+                })
+            except UserProfile.DoesNotExist:
+                order_form = OrderForm()
+        else:
+            order_form = OrderForm()
         if not stripe_public_key:
             messages.add_message(request, messages.WARNING, 'Stripe public key is missing, \
                 did you forget to set it in your Enviroment?')
@@ -106,7 +124,6 @@ def checkout(request):
             'order_form': order_form,
             'stripe_public_key': stripe_public_key,
             'client_secret': intent.client_secret,
-            'var': 12,
         }
         return render(request, template, context)
 
@@ -117,8 +134,34 @@ def checkout_success(request, order_number):
     """
 
     print('checkout_success recieved>>')
+
     save_info = request.session.get('save_info')
+    print("request.session.get('save_info')-->>> ", request.session.get('save_info'), save_info)
+    # Get the user's order
     order = get_object_or_404(Order, order_number=order_number)
+    
+    if request.user.is_authenticated:
+        print('User:--', request.user.username)
+        # Attach user's profile to the order
+        profile = UserProfile.objects.get(user=request.user)
+        order.user_profile = profile
+        order.save()
+        print('Order Saved!!!')
+        # save the user's info
+        if save_info:
+            profile_data = {
+                'default_phone_number': order.phone_number,
+                'default_county': order.county,
+                'default_postcode': order.postcode,
+                'default_town_or_city': order.town_or_city,
+                'default_street_address1': order.street_address1,
+                'default_street_address2': order.street_address2,
+                'default_country': order.country,
+            }
+            user_profile_form = UserProfileForm(profile_data, instance=profile)
+            if user_profile_form.is_valid():
+                user_profile_form.save()
+                print('Infos saved!!')
     messages.success(request, f'Order successful! \
                      Your order number is: "{order_number}", A confirmation \
                         Email will be sent to {order.email}')
