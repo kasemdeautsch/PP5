@@ -81,7 +81,6 @@
                                 <a href="{% url 'product_detail' product.id %}">
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
                                 </a>
-                                
                             {% endif %}
                             <div class="card-body pb-0">
                                 <p class="mb-0"><strong>Name: </strong>{{ product.name }}</p>
@@ -98,7 +97,6 @@
                                                 </a>
                                             </p>
                                         {% endif %}
-
                                         {% if product.rating %}
                                             <small class="text-muted"><i class="fa-solid fa-face-smile mr-1"></i>{{ product.rating }} / 5</small>
                                         {% else %}

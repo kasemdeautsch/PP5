@@ -106,6 +106,7 @@ def checkout(request):
             'order_form': order_form,
             'stripe_public_key': stripe_public_key,
             'client_secret': intent.client_secret,
+            'var': 12,
         }
         return render(request, template, context)
 
