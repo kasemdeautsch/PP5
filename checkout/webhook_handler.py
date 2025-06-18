@@ -18,7 +18,7 @@ class StripeWH_Handler:
         self.request = request
 
     def _send_email_confirmation(self, order):
-
+        """Send the user a confirmation email"""
         cust_email = order.email
 
         subject = render_to_string(
