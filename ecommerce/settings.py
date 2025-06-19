@@ -204,7 +204,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 if 'USE_AWS' in os.environ:
     # Bucket config
-    AWS_STORAGE_BUCKET_NAME = 'code-alma-store '
+    AWS_STORAGE_BUCKET_NAME = 'code-alma-store'
     AWS_S3_REGION_NAME = 'eu-north-1'
 
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
