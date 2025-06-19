@@ -18,23 +18,23 @@ if os.path.isfile('env.py'):
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
-# print('BASE_DIR:', BASE_DIR)
-# print('TEMPLATES_DIR:', TEMPLATES_DIR)
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'django-insecure-1-=poi6hrt#xe%$pl+7x=m((q9@6%dc^8qmr_v^9t9^l3fair%'
 SECRET_KEY = os.environ.get('SECRET_KEY')
-# SECRET_KEY = os.environ.get('SECRET_KEY')
+
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1',
                  'localhost',
                  '.herokuapp.com',
+                 'my-e-commerce-d1fdb39f64a7.herokuapp.com',
                  ]
 
 
