@@ -15,8 +15,7 @@ import json
 
 @require_POST
 def cache_checkout_data(request):
-
-    #print('cache_checkout_data received>>')
+    """A view to update the payment intent on post with some usefull infos"""
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -32,10 +31,23 @@ def cache_checkout_data(request):
         return HttpResponse(content=e, status=400)
 
 
-
 def checkout(request):
-
-    #print('checkout received>>')
+    """
+    Creates payment intent first on 'GET' and attaches user profile
+    if user is logged in, On 'POST' creates the order with lineitems
+    in the database :model: `about.About` :model: `products.Product`.
+    redirects to a seccess page on success.
+    
+    **Context**
+    ``oredr_form``
+        An instance of :form: `checkout.OrderForm`.
+    ``stripe_public_key``
+        stored in enviroment
+    ``stripe_secret_key``
+        stored in enviroment
+    **Template:**
+    :template: `checkout/checkout.html`.
+    """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -97,11 +109,10 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY
         )
 
-        #print('Intent:---', intent)
         if request.user.is_authenticated:
             try:
                 profile = UserProfile.objects.get(user=request.user)
-                order_form = OrderForm(initial= {
+                order_form = OrderForm(initial={
                     'full_name': profile.user.get_full_name(),
                     'email': profile.user.email,
                     'phone_number': profile.default_phone_number,
@@ -130,23 +141,26 @@ def checkout(request):
 
 def checkout_success(request, order_number):
     """
-    Handle successful checkout 
+    Handle successful checkout attaches user profile on order
+    and saves user's infos when user chooses to save his infos 
+    for the next ordering
+    **Context**
+    ``order``
+        The order of the customer with 'order_number'  :model: `checkout.Order`.
+    **Template:**
+    :template: `'checkout/checkout_success.html`.
+
     """
-
-    print('checkout_success recieved>>')
-
+    # if user wants to save his info
     save_info = request.session.get('save_info')
-    print("request.session.get('save_info')-->>> ", request.session.get('save_info'), save_info)
     # Get the user's order
     order = get_object_or_404(Order, order_number=order_number)
     
     if request.user.is_authenticated:
-        print('User:--', request.user.username)
         # Attach user's profile to the order
         profile = UserProfile.objects.get(user=request.user)
         order.user_profile = profile
         order.save()
-        print('Order Saved!!!')
         # save the user's info
         if save_info:
             profile_data = {
@@ -161,7 +175,6 @@ def checkout_success(request, order_number):
             user_profile_form = UserProfileForm(profile_data, instance=profile)
             if user_profile_form.is_valid():
                 user_profile_form.save()
-                print('Infos saved!!')
     messages.success(request, f'Order successful! \
                      Your order number is: "{order_number}", A confirmation \
                         Email will be sent to {order.email}')

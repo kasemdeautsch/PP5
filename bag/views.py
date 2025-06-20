@@ -4,12 +4,14 @@ from django.contrib import messages
 
 from products.models import Product
 
-# Create your views here.
 
 def view_bag(request):
-    """ A view that renders the bag contents page """
+    """
+    A view that renders the bag contents page
+    **Template:**
 
-
+    :template:`bag/bag.html`
+    """
     return render(request, 'bag/bag.html')
 
 
@@ -17,10 +19,13 @@ def add_to_bag(request, item_id):
 
     """
     Add a quantity of the specified product to the bag
+     **Context**
+    ``product``
+        The item to be added  :model: `products.Product`.
+    ``bag``
+       the shopping bag stored in the session
     """
     product = get_object_or_404(Product, pk=item_id)
-    # product = Product.objects.get(pk=item_id)
-
     quantity = int(request.POST.get('quantity'))
     redirect_url = (request.POST.get('redirect_url'))
 
@@ -35,17 +40,18 @@ def add_to_bag(request, item_id):
         messages.add_message(request, messages.SUCCESS, f'Added {product.name} to your bag')
 
     request.session['bag'] = bag
-    #print('request>>> ', request)
-    #print('request.session>>> ', request.session)
-    #print('request.session[bag]>>> ', request.session['bag'])
     return redirect(redirect_url)
 
 
 def update_bag(request, item_id):
     """
     Adjust quantity of the specified product to the specified amount
+    **Context**
+    ``product``
+        The item to be updated  :model: `products.Product`.
+    ``bag``
+       the shopping bag stored in the session
     """
-
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     bag = request.session.get('bag', {})
@@ -58,14 +64,18 @@ def update_bag(request, item_id):
         messages.add_message(request, messages.SUCCESS, f'Removed {product.name} from your bag.')
 
     request.session['bag'] = bag
-    #print('request>>> ', request)
-    #print('request.session>>> ', request.session)
-    print('request.session[bag]>>> ', request.session['bag'])
     return redirect(reverse('view_bag'))
+
 
 def remove_from_bag(request, item_id):
     """
     Remove the item from the shopping bag
+    
+    **Context**
+    ``product``
+        The item to be removed  :model: `products.Product`.
+    ``bag``
+       the shopping bag stored in the session
     """
 
     try:
@@ -73,8 +83,6 @@ def remove_from_bag(request, item_id):
         bag = request.session.get('bag', {})
         bag.pop(item_id)
         request.session['bag'] = bag
-        #print('request>>> ', request)
-        #print('request.session>>> ', request.session)
         print('request.session[bag]>>> ', request.session['bag'])
         messages.add_message(request, messages.SUCCESS, f'Removed {product.name} from your bag.')
         return HttpResponse(status=200)

@@ -7,10 +7,12 @@ from decimal import Decimal
 from products.models import Product
 from profiles.models import UserProfile
 
-# Create your models here.
-
 
 class Order(models.Model):
+    """
+    Order model to store customer orders and personal details
+    related to :model: `profiles.UserProfile'
+    """
 
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL, 
@@ -43,20 +45,14 @@ class Order(models.Model):
         Update grand total each time a line item is added,
         accounting for delivery costs.
         """
-        # print('-------------')
-        # print('Update total start....')
-        # print('-------------')
 
         self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
-        # print('order_total: ', self.order_total)
-
         if self.order_total < settings.FREE_DELIVERY_THRESHOLD:
             self.delivery_cost = self.order_total * settings.STANDARD_DELIVERY_PERCENTAGE / 100
         else:
             self.delivery_cost = 0
 
         self.grand_total = self.order_total + self.delivery_cost
-        # print('grand_total: ', self.grand_total)
         self.save()
 
     def save(self, *args, **kwargs):
@@ -68,13 +64,15 @@ class Order(models.Model):
             self.order_number = self._generate_order_number()
         super().save(*args, **kwargs)
         
-
     def __str__(self):
         return self.order_number
 
 
 class OrderLineItem(models.Model):
-
+    """
+    The items assiciated to the customer order
+    related to :model: `checkout.Order`
+    """
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
     product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
     quantity = models.IntegerField(null=False, blank=False, default=0)
