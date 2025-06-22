@@ -9,7 +9,7 @@ class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = '__all__'
-    image = forms.ImageField(label='Image-----', widget=CustomClearableFileInput, required=False)
+    image = forms.ImageField(label='Image--', widget=CustomClearableFileInput, required=False)
 
     # image = forms.ImageField(label='MyImage:------', required=False, widget=CustomClearableFileInput)
 
@@ -19,7 +19,9 @@ class ProductForm(forms.ModelForm):
 
         brands = Brand.objects.all()
         other_names = ((c.id, c.get_other_name()) for c in brands)
+        print('other_names: ', other_names)
+        print('brands: ', brands)
         self.fields['brand'].choices = other_names
-
+        print('self.fields.items(): ', self.fields.items())
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black rounded-0'
