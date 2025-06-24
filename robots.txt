@@ -1,2 +1,3 @@
 User-agent: *
+Disallow: /accounts/
 Sitemap: https://my-e-commerce-d1fdb39f64a7.herokuapp.com/sitemap.xml
