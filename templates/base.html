@@ -60,24 +60,13 @@
                     <h2 class="logo-font text-black my-0"><strong>Alma-</strong>Store</h2>
                 </a>
             </div>
-            <!--
-            <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-                <form method="GET" action="{% url 'products' %}">
-                    <div class="input-group w-100">
-                      <input class="form-control border border-black rounded-0" type="text" name="find" placeholder="Enter product name/processor model to search for">
-                      <div class="input-group-append">
-                        <button class="form-control btn btn-black border border-black rounded-0" type="submit">
-                          <span class="icon">
-                            <i class="fas fa-search"></i>
-                          </span>
-                        </button>
-                      </div>
-                    </div>
-                  </form>
-            </div>
-            -->
             <div class="col-12 col-lg-8 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                    <li class="list-inline-item">
+                        <a class="nav-link text-black mr-5" href="{% url 'about' %}" id="home-link">
+                          About
+                        </a>
+                    </li>
                     <li class="list-inline-item dropdown">
                         <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
@@ -148,7 +137,7 @@
     </div>
     <div class="container d-none d-lg-block">
       <div class="row">
-        <div class="col">
+        <div class="col-6">
           <h3 class="text-black">Search our website</h3>
           <p>Enter a search term:</p>
           <form class="form" method="GET" action="{% url 'products' %}">

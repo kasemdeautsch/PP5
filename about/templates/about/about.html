@@ -11,15 +11,41 @@
 {% endblock %}
 <!-- This template is the code institue idea with customisation -->
 {% block content %}
-    <div class="index-container h-100">
-        <div class="row h-100 justify-content-center">
-            <div class="col-12">
-                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}/landinglaptop.jpg" alt="laptop image">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-12 col-md-4 text-center">
+                {% if about.image %}
+                    <img class="w-25" src="{{ about.image.url }}" alt="{{ about.title }}">
+                {% else %}
+                     <img class="img-fluid" src="{{ MEDIA_URL }}nobody.jpg" alt="{{ about.title }}">
+                {% endif %}
             </div>
-            <div class="col-auto mb-3">
-                <h4>
-                    <a href="{% url 'products' %}" class="shop-now-button btn btn-info rounded-0 text-uppercase py-3">Start!</a>
-                </h4>
+            <div class="col-12 col-md-8">
+                <h2>{{ about.title }}</h2>
+                <p class="text-black">{{ about.content }}</p>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col text-right">
+                <p class="text-end "><em>Updated on:</em><span class="text-muted">{{ about.updated_on }}</span></p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-6 my-5">
+                    <h2>Tell us about your opinion!</h2>
+                    <p class="text-black ">
+                        I believe in the power of shared knowledge and collective effort.
+                        Whether you have a project in mind, wish to co-author
+                        an article, or simply want to brainstorm some ideas,
+                        I'm excited to hear from you. Fill out the form
+                        and we can get the ball rolling!
+                    </p>
+                </div>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                    <button type="submit" class="btn btn-secondery">Submit</button>
+                </form>
             </div>
         </div>
     </div>
