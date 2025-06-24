@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+<!-- This template is the code institue idea with customisation -->
+{% block content %}
+    <div class="index-container h-100">
+        <div class="row h-100 justify-content-center">
+            <div class="col-12">
+                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}/landinglaptop.jpg" alt="laptop image">
+            </div>
+            <div class="col-auto mb-3">
+                <h4>
+                    <a href="{% url 'products' %}" class="shop-now-button btn btn-info rounded-0 text-uppercase py-3">Start!</a>
+                </h4>
+            </div>
+        </div>
+    </div>
+
+    
+{% endblock %}
