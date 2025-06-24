@@ -15,37 +15,37 @@
         <div class="row">
             <div class="col-12 col-md-4 text-center">
                 {% if about.image %}
-                    <img class="w-25" src="{{ about.image.url }}" alt="{{ about.title }}">
+                    <img class="profile-img" src="{{ about.image.url }}" alt="{{ about.title }}">
                 {% else %}
-                     <img class="img-fluid" src="{{ MEDIA_URL }}nobody.jpg" alt="{{ about.title }}">
+                     <img class="profile-img" src="{{ MEDIA_URL }}nobody.jpg" alt="{{ about.title }}">
                 {% endif %}
             </div>
             <div class="col-12 col-md-8">
-                <h2>{{ about.title }}</h2>
+                <h2 class="p-2 text-black text-left">{{ about.title }}:</h2>
                 <p class="text-black">{{ about.content }}</p>
             </div>
 
         </div>
         <div class="row">
             <div class="col text-right">
-                <p class="text-end "><em>Updated on:</em><span class="text-muted">{{ about.updated_on }}</span></p>
+                <p><em>Updated on:</em><span class="text-muted">{{ about.updated_on }}</span></p>
             </div>
             <div class="row justify-content-center">
                 <div class="col-12 col-md-6 my-5">
-                    <h2>Tell us about your opinion!</h2>
-                    <p class="text-black ">
-                        I believe in the power of shared knowledge and collective effort.
-                        Whether you have a project in mind, wish to co-author
-                        an article, or simply want to brainstorm some ideas,
-                        I'm excited to hear from you. Fill out the form
+                    <h3 class="p-2">Your opinion is important!</h3>
+                    <p class="text-black p-2 ">
+                        Whether you have a project in mind, wish to suggest
+                        something, or simply want to brainstorm some ideas,
+                        I will be glad to hear from you. Fill out the form
                         and we can get the ball rolling!
                     </p>
+                     <form action="" method="POST">
+                        {% csrf_token %}
+                        {{ form | crispy }}
+                        <button type="submit" class="btn btn-secondary">Submit</button>
+                    </form>
                 </div>
-                <form action="" method="POST">
-                    {% csrf_token %}
-                    {{ form | crispy }}
-                    <button type="submit" class="btn btn-secondery">Submit</button>
-                </form>
+               
             </div>
         </div>
     </div>
