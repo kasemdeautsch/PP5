@@ -11,15 +11,33 @@
 {% endblock %}
 <!-- This template is the code institue idea with customisation -->
 {% block content %}
-    <div class="container">
+    <div class="container mt-3">
         <div class="row">
-            <div class="col-12">
-                {% for review in reviews %}
-                <ul>
-                    <li><p>{{ review }}</p></li>
-                </ul>
-                {% endfor %}
-            </div>
+            {% for review in reviews %}
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="review-container m-2 p-2">
+                         <div class="card h-100">
+                        {% if review.image %}
+                            <img src="{{ review.image.url }}" class="w-25 ml-2" alt="user image profile">
+                            <span class="ml-4 mt-2">{{ review.name }}</span>
+                        {% else %}
+                            <img src="{{ MEDIA_URL }}noimage.png" class="w-25 ml-2" alt="user image profile">
+                            <span class="ml-4">{{ review.name }}</span>
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title review-date"> Updated: <span class="small">{{ review.updated_on }}</span></h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Rated: {{ review.rating}} / 5</h6>
+                            <p class="card-text">
+
+                                {{ review }}
+                            </p>
+                            <a href="{% url 'products' %}" class="btn btn-primary">Keep Shopping</a>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+                   
+            {% endfor %}
         </div>
     </div>
 
