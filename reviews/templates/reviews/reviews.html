@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+<!-- This template is the code institue idea with customisation -->
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                {% for review in reviews %}
+                <ul>
+                    <li><p>{{ review }}</p></li>
+                </ul>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    
+{% endblock %}

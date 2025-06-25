@@ -1,11 +1,15 @@
 from django.contrib import admin
-# from .models import Reiews
+from .models import Reviews
+
 # Register your models here.
 
-# @admin.register(Reiews)
-# class ReviewAdmin(admin.ModelAdmin):
+
+@admin.register(Reviews)
+class ReviewAdmin(admin.ModelAdmin):
     
-#     list_display = ('name', 'rating', 'review')
-#     ordering = ('-rating',)
+    list_display = ('name', 'rating', 'review')
+    
+    class Meta:
+        ordering = ['reviewq']
 
 

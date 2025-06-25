@@ -7,6 +7,7 @@ class Reviews(models.Model):
 
     class Meta:
         verbose_name_plural = 'Reviews'
+        ordering = ['rating']
 
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='product_reviews')
     name = models.CharField(max_length=254)
@@ -17,4 +18,4 @@ class Reviews(models.Model):
                               max_length=5000)
     
     def __str__(self):
-        return f'{self.user.username} reviewed: {self.review}.'
+        return f'{self.user.username} reviewed: {self.review}'
