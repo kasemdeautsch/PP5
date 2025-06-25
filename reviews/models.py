@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 
-class Reiews(models.Model):
+class Reviews(models.Model):
 
     class Meta:
         verbose_name_plural = 'Reviews'
@@ -15,3 +15,6 @@ class Reiews(models.Model):
                                  null=True, blank=True)
     review = models.TextField(null=False, blank=False, default='',
                               max_length=5000)
+    
+    def __str__(self):
+        return f'{self.user.username} reviewed: {self.review}.'
