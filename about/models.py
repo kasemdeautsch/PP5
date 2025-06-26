@@ -1,11 +1,10 @@
 from django.db import models
 
-# Create your models here.
+# Blog post model
 
 
 class About(models.Model):
     """Stores a single about record"""
-
     title = models.CharField(max_length=50)
     content = models.TextField()
     updated_on = models.DateTimeField(auto_now=True)
@@ -13,6 +12,8 @@ class About(models.Model):
 
     def __str__(self):
         return self.title
+
+#  Blog post model
 
 
 class CollaborateRequest(models.Model):
@@ -25,3 +26,4 @@ class CollaborateRequest(models.Model):
 
     def __str__(self):
         return f'Collaboration request from: {self.name}'
+    

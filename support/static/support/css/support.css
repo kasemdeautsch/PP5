@@ -1,0 +1,15 @@
+
+.faq-question { 
+    font-weight: bold; 
+    color: #0066cc; 
+}
+
+.faqs{
+     margin: 20px auto; 
+     padding: 20px; 
+     background: white; 
+     border-radius: 8px;
+}
+.faqs h2 {
+     color: #444;
+}

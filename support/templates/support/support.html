@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'support/css/support.css' %}">
+{% endblock %}
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+<!-- This template is the code institue idea with customisation -->
+{% block content %}
+    <div class="container m">
+        <div class="row">
+            <div class="col-12">
+                <div class="faqs">
+                    <h2 class="mb-3">Frequently Asked Questions</h2>
+                    {% for faq in faqs %}
+                        <div class="mt-1">
+                            <div class="mb-3">
+                                <div class="faq-question">{{ faq.question }}</div>
+                                <p>{{ faq.answer }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                   
+                </div>
+            </div>
+            <div class="col">
+                 <a href="{% url 'products' %}" class="btn btn-primary">Keep Shopping</a>
+            </div>
+        </div>
+    </div>
+
+    
+{% endblock %}
