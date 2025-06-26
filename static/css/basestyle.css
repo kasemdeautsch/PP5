@@ -366,4 +366,10 @@ footerxx {
     .navbar-collapse .logo-font.nav-link {
         font-size: .9rem;
     }
+    .shop-now-button {
+    background: #7B0937;
+    color: white;
+    min-width: 130px;
+    padding: 10px;
+}
 }
