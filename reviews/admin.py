@@ -9,7 +9,3 @@ class ReviewAdmin(admin.ModelAdmin):
     
     list_display = ('name', 'rating', 'review', 'updated_on')
     
-    class Meta:
-        ordering = ['reviewq']
-
-

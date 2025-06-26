@@ -2,10 +2,10 @@ from django.db import models
 
 # Create your models here.
 
+
 class Brand(models.Model):
     name = models.CharField(max_length=254)
     other_name = models.CharField(max_length=254)
-
 
     def __str__(serlf):
         return serlf.name
