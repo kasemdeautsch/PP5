@@ -9,14 +9,6 @@ html {
 }
 
 body {
-    /*background: url('/media/lap1.jpg') no-repeat center center fixed;
-    /*background: url('../../media/lap1xx.jpg') no-repeat center center fixed;
-    background: url('/static/css/lap1xx.jpg') no-repeat center center fixed;
-    background-size: cover;
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-style: normal;*/
-    /*height: calc(100vh - 164px);*/
     color: #555;
     background-color: #f9f9f9;
     font-family: "Roboto", sans-serif;
@@ -344,12 +336,25 @@ footerxx {
         padding-top: 164px;
     }
 }
-/* pad the top a bit when navbar is collapsed on mobile */
+/* apply minimize padding and font size for header on mobiles */
 @media (max-width: 991px) {
     .xheader-container {
         padding-top: 116px;
     }
     Xbody {
         height: calc(100vh - 116px);
+    }
+    .nav-link {
+        padding: 0.15rem;
+    }
+    .nav-link i.fa-lg {
+        font-size: 1rem;
+    }
+    .navbar-toggler {
+        padding: .6rem;
+        font-size: 1rem;
+    }
+    #delivery-banner h4 {
+        font-size: 1rem;
     }
 }
