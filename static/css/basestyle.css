@@ -82,15 +82,7 @@ body {
 .bg-black {
     background: #000 !important;
 }
-.overlay {
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    position: fixed;
-    background: white;
-    z-index: -1;
-}
+
 .photo {
     background: url('/media/lap1.jpg') no-repeat center center fixed;
     background-size: cover;
@@ -192,6 +184,8 @@ These color codes were pulled directly from bootstrap CSS itself*/
 }
 
 /* Allauth form formatting */
+/* Botique Ado style */
+
 
 .allauth-form-inner-content p {
     margin-top: 1.5rem; /* mt-4 */
@@ -246,7 +240,7 @@ These color codes were pulled directly from bootstrap CSS itself*/
 }
 
 /* Product form*/
-
+/* Botique Ado project*/
 .btn-file {
     position:relative;
     overflow: hidden;
@@ -275,12 +269,6 @@ These color codes were pulled directly from bootstrap CSS itself*/
 }
 
 /* Mailchimp signup form */
-/*
-#mc_embed_signup{ 
-    background:#fff; false;clear:left; 
-    font:14px Helvetica,Arial,sans-serif; width: 600px;
-}
-*/
 
 .profile-img {
     width: 50%;
@@ -319,37 +307,11 @@ footerxx {
     background-color:#8DDEF6;
 }
 
-/* -------------------------------- Media Queries */
+/* Media Queries */
 
-/* Slightly larger container on xl screens */
-@media (min-width: 1200px) {
-  .XXcontainer {
-    max-width: 80%;
-  }
-}
 
-/* fixed top navbar only on medium and up */
-@media (min-width: 992px) {
-    .fixed-top-desktop-only {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 1030;
-    }
-
-    .XXheader-container {
-        padding-top: 164px;
-    }
-}
-/* apply minimize padding and font size for header on mobiles */
+/* minimize padding and font size for header on mobiles */
 @media (max-width: 991px) {
-    .xheader-container {
-        padding-top: 116px;
-    }
-    Xbody {
-        height: calc(100vh - 116px);
-    }
     .nav-link {
         padding: 0.15rem;
     }
@@ -371,5 +333,11 @@ footerxx {
     color: white;
     min-width: 130px;
     padding: 10px;
-}
+    }
+    .btn.btn-secondary.rounded-0,
+    .btn.btn-info.rounded-0,
+    .btn.btn-black.rounded-0 {
+        padding: .375rem .375rem;
+        font-size: .8rem;
+    }
 }
