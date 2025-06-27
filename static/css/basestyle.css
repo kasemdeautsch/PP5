@@ -319,7 +319,7 @@ footerxx {
         font-size: 1rem;
     }
     .navbar-toggler {
-        padding: .6rem;
+        padding: .4rem;
         font-size: 1rem;
     }
     #delivery-banner h4 {
@@ -342,6 +342,15 @@ footerxx {
     .btn.btn-info.rounded-0 {
         padding: .5rem;
         font-size: .8rem;
+    }
+    .btn.btn-secondary.rounded-0.btn-lg,
+    .btn.btn-black.rounded-0.btn-lg {
+        padding: .375rem .375rem;
+        font-size: .7rem;
+    }
+    .btn.btn-info.rounded-0.btn-lg {
+        padding: .3rem;
+        font-size: .7rem;
     }
     .mobile-font {
         font-size: 85%;
