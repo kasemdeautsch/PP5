@@ -335,9 +335,15 @@ footerxx {
     padding: 10px;
     }
     .btn.btn-secondary.rounded-0,
-    .btn.btn-info.rounded-0,
     .btn.btn-black.rounded-0 {
         padding: .375rem .375rem;
         font-size: .8rem;
+    }
+    .btn.btn-info.rounded-0 {
+        padding: .5rem;
+        font-size: .8rem;
+    }
+    .mobile-font {
+        font-size: 85%;
     }
 }
