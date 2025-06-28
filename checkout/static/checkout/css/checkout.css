@@ -1,3 +1,5 @@
+/* Add styling to card element and checkout form fields */
+/* Boutique Ado */
 .StripeElement,
 .stripe-style-input {
   box-sizing: border-box;
@@ -45,7 +47,7 @@ select:invalid,
 select option[value=""] {
   color: #87BBFD !important;
 }
-
+/* An overlay displays and disappear gradually  */
 #loading-overlay {
 	display: none;
 	position: fixed;
@@ -56,7 +58,7 @@ select option[value=""] {
     background: rgba(23, 162, 184, .85);
     z-index: 9999;
 }
-
+/* Loading spinner after click: checkout*/
 .loading-spinner {
 	display: flex;
     align-items: center;

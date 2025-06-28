@@ -1,8 +1,6 @@
 {% extends "base.html" %}
-
 {% load static %}
 {% load bag_tools %}
-
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -60,7 +58,6 @@
                                 <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
                             </a>	
                         </div>
-                        
                     </div>
                     <div class="table-responsive rounded  d-none d-md-block">
                         <table class="table table-sm table-borderless">
@@ -125,15 +122,17 @@
     var btt = document.getElementsByClassName('btt-link')[0]
     console.log(btt)
     btt.addEventListener("click" ,(e)=> {
-    //btt.addEventListener("click" ,function(e) {
         window.scrollTo(0,0)
     })
 </script>
+
 <script type="text/javascript">
+    // Bring the form('.update-form') to submit
     $('.update-link').click(function(e){
         var form = $(this).prev('.update-form');
         form.submit();
     })
+    // Post to view with needed data
     $('.remove-item').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];

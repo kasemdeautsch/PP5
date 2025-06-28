@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.contrib import messages
 from .models import About
 from .forms import CollaborateForm
-# Create your views here.
 
 
 def about_developer(request):
@@ -26,12 +25,11 @@ def about_developer(request):
         form = CollaborateForm(data=request.POST)
         if form.is_valid():
             form.save()
-            messages.add_message(request, messages.SUCCESS, 
+            messages.add_message(request, messages.SUCCESS,
                                  'Thank you for your collaboration, '
-                                 'we will take your message in consideration '
-                                 'and respond soon!')
+                                 'we will take your message in consideration ')
         else:
-            messages.add_message(request, messages.ERROR, 
+            messages.add_message(request, messages.ERROR,
                                  'There are some issues with the form, '
                                  'Please check the validation under fields!')
     else:

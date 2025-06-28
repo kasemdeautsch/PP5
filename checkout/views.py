@@ -11,11 +11,21 @@ from profiles.forms import UserProfileForm
 import stripe
 import json
 
-# Create your views here.
 
 @require_POST
 def cache_checkout_data(request):
-    """A view to update the payment intent on post with some usefull infos"""
+    """
+    A view to update the payment intent on post with some usefull infos
+    **Context**
+    ``pid``
+        payment intent created by checkout view.
+    ``bag``
+        shopping bag from the session.
+    ``save_info``
+        get the value of save_info if user wants to save his profile.
+   ``username``
+        username from the reqwuest object
+    """
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -33,11 +43,12 @@ def cache_checkout_data(request):
 
 def checkout(request):
     """
-    Creates payment intent first on 'GET' and attaches user profile
-    if user is logged in, On 'POST' creates the order with lineitems
-    in the database :model: `about.About` :model: `products.Product`.
-    redirects to a seccess page on success.
-    
+    Creates payment intent first on 'GET' and fetches the user profile
+    if user is logged in and render it,
+    On 'POST' creates the order with lineitems
+    in the database :model: `checkout.Order` :model: `products.Product`.
+    :model: `profiles.UserProfile`.
+    redirects to a success page on success.
     **Context**
     ``oredr_form``
         An instance of :form: `checkout.OrderForm`.
@@ -82,13 +93,15 @@ def checkout(request):
                     order_line_item.save()
                 except Product.DoesNotExist:
                     messages.add_message(request, messages.ERROR, (
-                        "One of the products in your bag wasn't found in our database. "
+                        "One of the products in your bag wasn't found "
+                        "in our database. "
                         "Call us for assistance!")
                     )
                     order.delete()
                     return redirect(reverse('view_bag'))
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse('checkout_success',
+                                    args=[order.order_number]))
         else:
             messages.add_message(request, messages.ERROR, (
                         "There was an error in in your form. "
@@ -97,9 +110,9 @@ def checkout(request):
     else:
         bag = request.session.get('bag', {})
         if not bag:
-            messages.add_message(request, messages.ERROR, "There's nothing in your bag at the moment")
+            messages.add_message(request, messages.ERROR,
+                                 "There's nothing in your bag at the moment")
             return redirect(reverse('products'))
-    
         current_bag = bag_contents(request)
         total = current_bag['grand_total']
         stripe_total = round(total * 100)
@@ -128,7 +141,8 @@ def checkout(request):
         else:
             order_form = OrderForm()
         if not stripe_public_key:
-            messages.add_message(request, messages.WARNING, 'Stripe public key is missing, \
+            messages.add_message(request, messages.WARNING,
+                                 'Stripe public key is missing, \
                 did you forget to set it in your Enviroment?')
         template = 'checkout/checkout.html'
         context = {
@@ -142,11 +156,13 @@ def checkout(request):
 def checkout_success(request, order_number):
     """
     Handle successful checkout attaches user profile on order
-    and saves user's infos when user chooses to save his infos 
+    if user is logged in and saves user's infos
+    when user chooses to save his infos
     for the next ordering
     **Context**
     ``order``
-        The order of the customer with 'order_number'  :model: `checkout.Order`.
+        The order of the customer with 'order_number'
+        :model: `checkout.Order`.
     **Template:**
     :template: `'checkout/checkout_success.html`.
 
@@ -155,7 +171,6 @@ def checkout_success(request, order_number):
     save_info = request.session.get('save_info')
     # Get the user's order
     order = get_object_or_404(Order, order_number=order_number)
-    
     if request.user.is_authenticated:
         # Attach user's profile to the order
         profile = UserProfile.objects.get(user=request.user)

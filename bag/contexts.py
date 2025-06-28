@@ -6,14 +6,19 @@ from products.models import Product
 
 def bag_contents(request):
     """
-    Aview that creates a shopping bag which is a list
-    and returns it with other items to ba used in all templates 
+    A view that creates a shopping bag which is a list
+    and returns it with other variables to ba used in all templates
     """
+    # Initiate an empty bag list
     bag_items = []
     total = 0
     product_count = 0
+
+    # Get the bag from session if exist or nitiate it to an empty dictionary
     bag = request.session.get('bag', {})
-    
+
+    # Get product from :model: `products.product`
+    # Loop over bag items and generate the needed variables
     for item_id, quantity in bag.items():
         product = get_object_or_404(Product, pk=item_id)
         total += quantity * product.price

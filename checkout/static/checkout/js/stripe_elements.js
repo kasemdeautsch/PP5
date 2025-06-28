@@ -1,12 +1,10 @@
-console.log('Hi')
 
+// Create card element and add styling
 var stripePublicKey = $('#id_stripe_public_key').text().slice(1,-1);
 var clientSecret = $('#id_client_secret').text().slice(1,-1);
 
-
 var stripe = Stripe(stripePublicKey);
 var elements = stripe.elements();
-
 
  var style = {
     base: {
@@ -32,7 +30,6 @@ var card = elements.create('card', {style: style});
 card.mount('#card-element');
 
 // Handle real time validation errors from card element
-
 card.addEventListener('change', function(e) {
     var errorDiv = $('#card-errors');
     if(e.error) {
@@ -50,16 +47,13 @@ card.addEventListener('change', function(e) {
 
 // Handle form submission
 var form = document.getElementById('payment-form');
-
 form.addEventListener('submit', function(event) {
     event.preventDefault();
     card.update({ 'disabled': true});
     $('#submit-button').attr('disabled', true);
     $('#payment-form').fadeToggle(100);
     $('#loading-overlay').fadeToggle(100);
-
     var saveInfo = Boolean($('#id-save-info').attr('checked'));
-    
     // From using {% csrf_token %} in the form
     var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
     var postData = {
