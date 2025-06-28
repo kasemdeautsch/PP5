@@ -232,7 +232,7 @@ if 'USE_AWS' in os.environ:
     MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
 # Stripe
-FREE_DELIVERY_THRESHOLD = 450
+FREE_DELIVERY_THRESHOLD = 1000
 STANDARD_DELIVERY_PERCENTAGE = 10
 
 STRIPE_CURRENCY = 'usd'
@@ -243,6 +243,7 @@ STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    
     DEFAULT_FROM_EMAIL = 'ecommerce.example.com'
 
 else:
