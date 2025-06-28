@@ -56,9 +56,13 @@ def update_bag(request, item_id):
     quantity = int(request.POST.get('quantity'))
     bag = request.session.get('bag', {})
 
-    if quantity > 0:
+    if 100 > quantity > 0:
         bag[item_id] = quantity
         messages.add_message(request, messages.SUCCESS, f'Updated {product.name} quantity to {bag[item_id]}')
+    elif quantity < 0:
+        messages.add_message(request, messages.WARNING, f'Error!. Please enter quantity in rang 1-99')
+    elif quantity > 99:
+        messages.add_message(request, messages.WARNING, f'Error!. Please enter quantity in rang 1-99')
     else:
         bag.pop(item_id)
         messages.add_message(request, messages.SUCCESS, f'Removed {product.name} from your bag.')
