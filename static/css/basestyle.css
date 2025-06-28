@@ -334,7 +334,28 @@ footerxx {
     min-width: 130px;
     padding: 10px;
     }
+  
+    .mobile-font {
+        font-size: 85%;
+    }
+    .btn.btn-black.rounded-0,
     .btn.btn-secondary.rounded-0,
+    .btn.btn-info.rounded-0 {
+        padding: .375rem .375rem;
+        font-size: .9rem;
+    }
+    
+    .btn.btn-secondary.rounded-0.btn-lg,
+    .btn.btn-info.rounded-0.btn-lg {
+        padding: .375rem .375rem;
+        font-size: .9rem;
+    }
+    .increment-qty, .decrement-qty {
+        padding: .2rem .5rem !important;
+    }
+}
+/* 
+  .btn.btn-secondary.rounded-0,
     .btn.btn-black.rounded-0 {
         padding: .375rem .375rem;
         font-size: .8rem;
@@ -351,8 +372,4 @@ footerxx {
     .btn.btn-info.rounded-0.btn-lg {
         padding: .3rem;
         font-size: .7rem;
-    }
-    .mobile-font {
-        font-size: 85%;
-    }
-}
+    } */
