@@ -4,7 +4,9 @@ from django.db import models
 
 
 class Faqs(models.Model):
-
+    """
+    Stores frequent questions and the unswers
+    """
     class Meta:
         verbose_name_plural = 'Faqs'
 

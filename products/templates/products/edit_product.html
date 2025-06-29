@@ -1,7 +1,4 @@
-
 {% extends "base.html" %}
-{% load static %}
-
 
 {% block page_header %}
     <div class="container header-container">
@@ -22,12 +19,10 @@
                 <hr>
             </div>
         </div>
-
         <div class="row">
             <div class="col-12 col-md-6">
                 <form  method="POST" action="{% url 'edit_product' product.id %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
-                    
                     {% for field in form %}
                         {% if field.name != 'image' %}
                             {{ field | as_crispy_field }}
@@ -35,7 +30,6 @@
                             {{ field }}
                         {% endif %}
                     {% endfor %}
-                     
                      <div class="text-right">
                         <a href="{% url 'products' %}" class="btn btn-secondary rounded-0">Cancel</a>
                         <button type="submit" class="btn btn-info rounded-0">Update</button>
@@ -44,13 +38,11 @@
             </div>
         </div>
     </div>
-
-
-    
 {% endblock %}
 
 {% block loadjsaa %}
     {{ block.super }}
+    <!-- Display the image name in the div when selected -->
     <script type="text/javascript">
         $('#new-image').change(function() {
             var file = $('#new-image')[0].files[0];

@@ -4,12 +4,15 @@ from django.contrib.auth.models import User
 
 
 class Reviews(models.Model):
-
+    """
+    Stores reviews of the customers related to :model: `auth.User`
+    """
     class Meta:
         verbose_name_plural = 'Reviews'
         ordering = ['-updated_on']
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='product_reviews')
+    user = models.ForeignKey(User, on_delete=models.CASCADE,
+                             related_name='product_reviews')
     name = models.CharField(max_length=254)
     image = models.ImageField(null=True, blank=True)
     rating = models.DecimalField(max_digits=5, decimal_places=2,

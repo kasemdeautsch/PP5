@@ -1,7 +1,5 @@
 {% extends "base.html" %}
 
-{% load static %}
-
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -10,8 +8,8 @@
     </div>
 {% endblock %}
 
+<!-- This template is the code institue idea with customisation -->
 {% block content %}
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 col-sm-6 col-md-6">
@@ -80,7 +78,6 @@
                                     </div>
                                     <input class="form-control qty_input id_qty_{{ product.id }}" type="number" 
                                        name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}">
-                                       
                                     <div class="input-group-append">
                                         <button class="increment-qty btn btn-black rounded-0 increment-qty_{{ product.id }}"
                                         data-item_id="{{ product.id }}">
@@ -110,10 +107,6 @@
 
 </div>
   
-
-    
-
-    
 {% endblock %}
 
 {% block loadjs %}

@@ -1,3 +1,4 @@
+// Add the proper color on the country field on start and change event
 let countryField=document.getElementById('id_default_country').value;
 if(!countryField) {
     document.getElementById('id_default_country').style.color="#87BBFD";

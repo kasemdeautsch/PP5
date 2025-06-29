@@ -8,14 +8,6 @@ urlpatterns = [
     path('<int:product_id>/', views.product_detail, name='product_detail'),
     path('add/', views.add_product, name='add_product'),
     path('edit/<int:product_id>/', views.edit_product, name='edit_product'),
-    path('delete/<int:product_id>/', views.delete_product, name='delete_product'),
-    
+    path('delete/<int:product_id>/', views.delete_product,
+         name='delete_product'),
 ]
-
-# import os
-
-#os.environ.setdefault("SECRET_KEY", "lp0|>i)]*H<F6q-xnAji:Rb?S(J)Po=hNEmVh1Bn9}FpFKS[k)jUcXE(2tPj/O*")
-
-#os.environ.setdefault('STRIPE_PUBLIC_KEY', 'pk_test_51RZUB0PSaDnciGD0sUTsZISSLTIr3pNb1G2ZtjKtPXSpa9Eoza#9Lspk2QtJrGcqOx3JGUuHR3326RJcOX63ScIBl00cpDtnMhw')
-#os.environ.setdefault('STRIPE_SECRET_KEY', 'sk_test_51RZUB0PSaDnciGD0zP7nMYiaK7IhzqaXwkyXfwPN2XqBpEvdlwKuImqygnQePGoKhFfjfDQhAHqF0oRVsIfGMkaF00I2FiojD4')
-

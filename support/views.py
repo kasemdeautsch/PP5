@@ -4,7 +4,15 @@ from .models import Faqs
 
 
 def answers(request):
+    """
+    Displays frequent asks and answers
 
+    **Context**
+    ``faqs``
+        All questions from :model: `support.Faqs`
+    **Template:**
+    :template:`support/support.html`
+    """
     faqs = Faqs.objects.all()
     template = 'support/support.html'
     context = {

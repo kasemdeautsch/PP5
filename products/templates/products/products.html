@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 
-{% load static %}
 <!-- This template is the code institue idea with customisation -->
 {% block page_header %}
     <div class="container header-container">
@@ -11,7 +10,6 @@
 {% endblock %}
 
 {% block content %}
-
 <div class="container">
     <div class="row">
         <div class="col border text-black text-center text-info my-3 p-3 shadow-sm rounded-0">
@@ -33,7 +31,6 @@
                 <a class="category-badge text-decoration-none" href="{% url 'products' %}?brand={{ brand.name }}">
                     <span class="p-2 mt-2 badge badg-white text-black rounded-0 border border-dark">{{ brand.other_name }}</span>
                 </a>
-                
            {% endfor %}
            <hr class="w-50 mb-1">
         </div>
@@ -71,7 +68,6 @@
             <div class="row">
                 {% for product in products %}
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        
                         <div class="card h-100 border-0">
                             {% if product.image %}
                                 <a href="{% url 'product_detail' product.id %}">
@@ -118,7 +114,6 @@
                             <hr>
                         </div>
                     {% endif %}
-                    
                     {% if forloop.counter|divisibleby:2 %}
                         <div class="col-12 d-none d-sm-block d-md-block d-lg-none">
                             <hr>
@@ -140,13 +135,11 @@
         </div>
     </div>
 </div>
-
 <div class="btt-button shadow-sm rounded-0 border border-black">
     <a class="btt-link d-flex h-100">
         <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
     </a>
 </div>
-
 {% endblock %}
 
 {% block loadjs %}
@@ -157,28 +150,18 @@
             window.scrollTo(0,0)
         })
     </script>
-
+    <!-- Boutique Ado -->
+    <!-- Call the appropriate URL when selecting a sort key from select element -->
     <script type="text/javascript">
     $('#sort-selector').change(function(e){
-        //console.log('chenged..');
         var selector = $(this);
         var currentUrl = new URL(window.location);
-        //console.log(selector);
-        //console.log(currentUrl);
-        //console.log('-----');
-        //console.log('window.location: ', window.location);
-        //window.location=`${currentUrl}?sort=price&direction=asc`;
-
         var selectedVal = selector.val();
-        //console.log(selectedVal)
         if(selectedVal != "reset"){
             var sort = selectedVal.split('_')[0];
             var direction = selectedVal.split('_')[1];
-            //console.log(sort,'_',direction);
             currentUrl.searchParams.set("sort", sort);
             currentUrl.searchParams.set("direction", direction);
-            console.log('window.location: ', window.location);
-            console.log('currentUrl: ', currentUrl);
             window.location.replace(currentUrl);
         }
         else{
@@ -187,8 +170,6 @@
             console.log('currentUrl: ', currentUrl);
             window.location.replace(currentUrl);
         }
-
     })
-
     </script>
 {% endblock %}

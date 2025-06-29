@@ -11,16 +11,24 @@ from .forms import UserProfileForm
 def profile(request):
     """
     Displays the user's profile
+    **Context**
+    ``orders``
+        All orders related to the requested user
+    ``form``
+        an instance of :form: `profiles.UserProfileForm`.
+    **Template:**
+    :template:`profiles/profile.html`
     """
     user_profile = get_object_or_404(UserProfile, user=request.user)
-    # user_profile = UserProfile.objects.get(user=request.user)
     if request.method == "POST":
         form = UserProfileForm(data=request.POST, instance=user_profile)
         if form.is_valid():
             form.save()
-            messages.add_message(request, messages.SUCCESS, 'Profile updated successfully')
+            messages.add_message(request, messages.SUCCESS,
+                                 'Profile updated successfully')
         else:
-            messages.add_message(request, messages.ERROR,'Update Failed . Please ensure the form is valid')
+            messages.add_message(request, messages.ERROR, 'Update Failed . '
+                                 'Please ensure the form is valid')
     else:
         form = UserProfileForm(instance=user_profile)
     orders = user_profile.orders.all()
@@ -29,12 +37,20 @@ def profile(request):
         'form': form,
         'orders': orders,
     }
-
     return render(request, template, context)
 
 
 def order_history(request, order_number):
-
+    """
+    Displays the user's history order, receives the order_number
+    **Context**
+    ``order``
+        The order to display
+    ``from_profile``
+        A variable to check if a request comming from this view.
+    **Template:**
+    :template:`checkout/checkout_success.html`
+    """
     order = get_object_or_404(Order, order_number=order_number)
     # order = Order.objects.get(order_number=order_number)
     messages.add_message(request, messages.INFO, (

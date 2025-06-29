@@ -14,10 +14,8 @@
         } else {
             var currentValue = parseInt($(`.id_qty_${itemId}`).val());
         }
-
         var minusDisabled = currentValue < 2;
         var plusDisabled = currentValue > 98;
-
         //  Use class instead of ID for decrement and increment buttons
         //  Add conditional statement to check whether the item has a size
         if (size) {
@@ -37,7 +35,6 @@
         var size = $(allQtyInputs[i]).data('size');
         handleEnableDisable(itemId, size);
     }
-
     // Check enable/disable every time the input is changed
     $('.qty_input').change(function() {
         var itemId = $(this).data('item_id');
@@ -45,7 +42,6 @@
         var size = $(this).data('size');
         handleEnableDisable(itemId, size);
     });
-
     // Increment quantity
     $('.increment-qty').click(function(e) {
        e.preventDefault();
@@ -64,7 +60,6 @@
        // Add size on handling enable/disable
        handleEnableDisable(itemId, size);
     });
-
     // Decrement quantity
     $('.decrement-qty').click(function(e) {
        e.preventDefault();
