@@ -373,3 +373,101 @@ footerxx {
         padding: .3rem;
         font-size: .7rem;
     } */
+
+.hero-section {
+    background: #f8fbff;
+}
+.hero-section h1, .hero-section p {
+    color: #19324d;
+}
+.hero-buttons .btn {
+    min-width: 180px;
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:focus {
+    color: #fff !important;
+    background-color: #0088cc !important;
+    border-radius: 6px;
+}
+.navbar-nav .nav-link:hover {
+    color: #fff !important;
+    background-color: #005f8a !important;
+    border-radius: 6px;
+}
+
+.input-group .form-control {
+  border-radius: 20px 0 0 20px !important;
+}
+.input-group .btn {
+  border-radius: 0 20px 20px 0 !important;
+}
+.navbar-nav .nav-link {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+/* Bigger breathing space for icons */
+.navbar-nav .nav-link i {
+  margin-right: 5px;
+  font-size: 1.1em;
+}
+
+/* Optional: Relax search button appearance */
+.input-group .btn {
+  min-width: 42px;
+}
+
+/* .navbar-nav .nav-link {
+  margin-left: 8px;
+  margin-right: 8px;
+} */
+
+.dropdown-menu.p-2 {
+  min-width: 350px !important;
+}
+ /* Make the search dropdown wider and not stacked*/
+.input-group {
+  width: 100% !important;
+  flex-wrap: nowrap !important;
+}
+.input-group .form-control {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+.input-group-append {
+  flex-shrink: 0;
+}
+
+/* Spacing between navbar items */
+.navbar-nav .nav-item {
+  margin-left: 14px;
+  margin-right: 0;
+}
+@media (max-width: 991.98px) {
+  .navbar-nav .nav-item {
+    margin-left: 0;
+  }
+}
+
+
+
+/* media queries */
+@media (max-width: 991px) {
+  .navbar-nav .nav-link {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+@media (max-width: 991.98px) {
+    .navbar .navbar-nav {
+        margin-top: 1rem;
+    }
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    .hero-section .display-4 {
+        font-size: 1.7rem;
+    }
+}

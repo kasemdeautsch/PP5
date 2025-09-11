@@ -7,14 +7,14 @@ from products.models import Product
 def bag_contents(request):
     """
     A view that creates a shopping bag which is a list
-    and returns it with other variables to ba used in all templates
+    and returns it with other variables to be used in all templates
     """
     # Initiate an empty bag list
     bag_items = []
     total = 0
     product_count = 0
 
-    # Get the bag from session if exist or nitiate it to an empty dictionary
+    # Get the bag from session if exist or initiate it to an empty dictionary
     bag = request.session.get('bag', {})
 
     # Get product from :model: `products.product`
