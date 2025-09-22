@@ -288,9 +288,7 @@ These color codes were pulled directly from bootstrap CSS itself*/
 
 /*Footer*/
 
-footerxx {
-    background-color:#8DDEF6;
-}
+
 #mc_embed_signup_scroll{
     margin-left: -20px;
 }
@@ -332,14 +330,11 @@ footerxx {
     border-radius: 6px;
 }
 
-#mobileSearchInput, #desktopSearchInput {
+.input-group .form-control {
   border-radius: 20px 0 0 20px !important;
 }
-
-/* Relax search button appearance */
-.navbar-nav .input-group-append .search-button {
+.input-group .btn {
   border-radius: 0 20px 20px 0 !important;
-  min-width: 42px;
 }
 .navbar-nav .nav-link {
   padding-left: 20px;
@@ -348,13 +343,15 @@ footerxx {
 
 
 /* Bigger breathing space for icons */
-.navbar-nav .nav-link i.fa-user {
-  
+.navbar-nav .nav-link i {
+  margin-right: 5px;
   font-size: 1.1em;
 }
 
-
-
+/* Optional: Relax search button appearance */
+.input-group .btn {
+  min-width: 42px;
+}
 
 .dropdown-menu.p-2 {
   min-width: 350px !important;
@@ -374,30 +371,27 @@ footerxx {
 
 /* Spacing between navbar items */
 .navbar-nav .nav-item {
-  margin-left: 8px;
+  margin-left: 14px;
   margin-right: 0;
 }
-
-.navbar-light .navbar-nav .nav-link {
-    color: rgba(0, 0, 0, .7);
-}
-
-
-#menu-right i.fa-cart-shopping {
-    margin-right: 2px;
-}
-
-/* Media Queries */
-
-/* minimize padding and font size for header on mobiles */
-@media screen and (max-width: 991px) {
-    .navbar-nav .nav-item {
+@media (max-width: 991.98px) {
+  .navbar-nav .nav-item {
     margin-left: 0;
   }
-    .navbar-nav .nav-link {
+}
+
+
+
+/* media queries */
+@media (max-width: 991px) {
+  .navbar-nav .nav-link {
     padding-left: 8px;
     padding-right: 8px;
   }
+}
+
+
+@media (max-width: 991.98px) {
     .navbar .navbar-nav {
         margin-top: 1rem;
     }
@@ -407,12 +401,20 @@ footerxx {
     .hero-section .display-4 {
         font-size: 1.7rem;
     }
+}
 
 
+/* Media Queries */
+
+
+/* minimize padding and font size for header on mobiles */
+@media (max-width: 991px) {
     .nav-link {
         padding: 0.15rem;
     }
-   
+    .nav-link i.fa-lg {
+        font-size: 1rem;
+    }
     .navbar-toggler {
         padding: .4rem;
         font-size: 1rem;
@@ -457,7 +459,6 @@ footerxx {
         margin-left: -3px;
         font-weight:bold;
         font-size: 1.2rem;
-        margin-top: 14px;
     }
 /* 
   .btn.btn-secondary.rounded-0,
