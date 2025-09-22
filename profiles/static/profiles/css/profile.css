@@ -8,11 +8,11 @@
         padding-top: 164px;
     }
 
-    .profile-form-input::placeholder{
+.profile-form-input::placeholder{
     color: #87BBFD;
 }
 
-   .profile-form-input.form-control{
+.profile-form-input.form-control{
     color: #000;
 }
 

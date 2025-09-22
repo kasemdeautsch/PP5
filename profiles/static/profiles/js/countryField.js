@@ -4,8 +4,8 @@ if(!countryField) {
     document.getElementById('id_default_country').style.color="#87BBFD";
 };
 $('#id_default_country').change(function() {
-    let countryField = $(this).val();
-    if(!countryField){
+    let countrySelected = $(this).val();
+    if(!countrySelected){
         $(this).css('color', "#87BBFD");
     } else {
         $(this).css('color', "#000");

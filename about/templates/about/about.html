@@ -9,45 +9,45 @@
         </div>
     </div>
 {% endblock %}
-<!-- This template is the code institue idea with customisation -->
-{% block content %}
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-12 col-md-4 text-center">
-                {% if about.image %}
-                    <img class="profile-img mb-4 p-2" src="{{ about.image.url }}" alt="{{ about.title }}">
-                {% else %}
-                     <img class="profile-img mb-4 p-2" src="{{ MEDIA_URL }}nobody.jpg" alt="{{ about.title }}">
-                {% endif %}
-            </div>
-            <div class="col-12 col-md-8">
-                <h2 class="p-2 text-left">{{ about.title }}:</h2>
-                <p class="text-black">{{ about.content }}</p>
-            </div>
 
+{% block content %}
+  <div class="container mt-5">
+    <!-- Row 1: Image + About text -->
+    <div class="row">
+        <!-- Image -->
+        <div class="col-12 col-md-4 text-center">
+            {% if about.image %}
+                <img class="profile-img mt-2 mb-4 p-2" src="{{ about.image.url }}" alt="{{ about.title }}">
+            {% else %}
+                <img class="profile-img mt-2 mb-4 p-2" src="{{ MEDIA_URL }}nobody.jpg" alt="{{ about.title }}">
+            {% endif %}
         </div>
-        <div class="row">
-            <div class="col text-right">
-                <p><em>Updated on: </em><span class="text-muted">{{ about.updated_on }}</span></p>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-6 my-5">
-                    <h3 class="p-2">Your opinion is important!</h3>
-                    <p class="text-black p-2 ">
-                        Whether you have a project in mind, wish to suggest
-                        something, or simply want to brainstorm some ideas,
-                        I will be glad to hear from you. Fill out the form
-                        and we can get the ball rolling!
-                    </p>
-                     <form action="" method="POST">
-                        {% csrf_token %}
-                        {{ form | crispy }}
-                        <button type="submit" class="btn btn-info rounded-0">Submit</button>
-                        <a href="{% url 'products' %}" class="btn btn-secondary rounded-0">Keep Shopping</a>
-                    </form>
-                </div>
-               
-            </div>
+        <!-- About text -->
+        <div class="col-12 col-md-8 text-center text-md-left">
+            <h2 class="p-2">{{ about.title }}:</h2>
+            <p class="text-black">{{ about.content }}</p>
+            <p class="text-muted"><em>Updated on: </em>{{ about.updated_on }}</p>
         </div>
     </div>
+    <!-- Row 2: Form  -->
+    <div class="row">
+        <div class="col-12 col-md-8 offset-md-4 text-center text-md-left my-5">
+            <h3 class="p-2">Your opinion is important!</h3>
+            <p class="text-black p-2">
+                Whether you have a project in mind, wish to suggest
+                something, or simply want to brainstorm some ideas,
+                I will be glad to hear from you. Fill out the form
+                and we can get the ball rolling!
+            </p>
+            <form action="" method="POST">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <div class="text-left">
+                    <button type="submit" class="btn btn-info rounded-0">Submit</button>
+                    <a href="{% url 'products' %}" class="btn btn-secondary rounded-0">Keep Shopping</a>
+                </div>
+            </form>
+        </div>
+    </div>
+  </div>
 {% endblock %}

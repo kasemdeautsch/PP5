@@ -34,6 +34,7 @@ class UserProfile(models.Model):
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
     """
+    Receiver for the post_save event from the User model.
     Create or update user profile
     """
     if created:

@@ -20,23 +20,23 @@ class StripeWH_Handler:
         self.request = request
         print('__init__ started...')
 
-    # def _send_email_confirmation(self, order):
-    #     """Send the user a confirmation email"""
-    #     cust_email = order.email
+    def _send_email_confirmation(self, order):
+        """Send the user a confirmation email"""
+        cust_email = order.email
 
-    #     subject = render_to_string(
-    #         'checkout/confirmation_emails/confirmation_email_subject.txt',
-    #         {'order': order})
-    #     body = render_to_string(
-    #         'checkout/confirmation_emails/confirmation_email_body.txt',
-    #         {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
+        subject = render_to_string(
+            'checkout/confirmation_emails/confirmation_email_subject.txt',
+            {'order': order})
+        body = render_to_string(
+            'checkout/confirmation_emails/confirmation_email_body.txt',
+            {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
 
-    #     send_mail(
-    #         subject,
-    #         body,
-    #         settings.DEFAULT_FROM_EMAIL,
-    #         [cust_email]
-    #     )
+        send_mail(
+            subject,
+            body,
+            settings.DEFAULT_FROM_EMAIL,
+            [cust_email]
+        )
 
     def handle_event(self, event):
         """
@@ -79,8 +79,12 @@ class StripeWH_Handler:
                 profile.default_country = shipping_details.address.country
                 profile.default_postcode = shipping_details.address.postal_code
                 profile.default_town_or_city = shipping_details.address.city
-                profile.default_street_address1 = shipping_details.address.line1
-                profile.default_street_address2 = shipping_details.address.line2
+                profile.default_street_address1 = (
+                    shipping_details.address.line1
+                )
+                profile.default_street_address2 = (
+                    shipping_details.address.line2
+                    )
                 profile.default_county = shipping_details.address.state
                 profile.save()
 
@@ -109,7 +113,7 @@ class StripeWH_Handler:
                 time.sleep(1)
 
         if order_exists:
-            # self._send_email_confirmation(order)
+            self._send_email_confirmation(order)
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: '
                 'Verified order already in database',

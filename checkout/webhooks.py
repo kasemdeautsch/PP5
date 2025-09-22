@@ -36,10 +36,10 @@ def webhook(request):
         return HttpResponse(content=e, status=400)
     
     # If we reach here, the event is valid
-    print('Webhook received: ')
+    # print('Webhook received: ')
 
     # Debugging output
-    # print('webhook called...')
+    print('webhook called...')
     # print('request>>', request)
     # print('event>>', event)
 
@@ -55,7 +55,7 @@ def webhook(request):
 
     # Get the webhook type from Stripe
     event_type = event['type']
-    # print('event_type->>', event_type)
+    print('event_type->>', event_type)
 
     # If there's a handler for it, get it from the event map
     # Use the generic one by default

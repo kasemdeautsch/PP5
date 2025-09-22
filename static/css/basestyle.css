@@ -197,7 +197,7 @@ These color codes were pulled directly from bootstrap CSS itself*/
     border-radius: 0;
 }
 
-.allauth-form-inner-content1 label:not([for='id_remember']) {
+.allauth-form-inner-content label:not([for='id_remember']) {
     display: none;
 }
 
@@ -271,7 +271,7 @@ These color codes were pulled directly from bootstrap CSS itself*/
 /* Mailchimp signup form */
 
 .profile-img {
-    width: 50%;
+    width: 70%;
     height: auto;
 }
 
