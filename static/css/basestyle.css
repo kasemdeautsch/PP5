@@ -288,9 +288,7 @@ These color codes were pulled directly from bootstrap CSS itself*/
 
 /*Footer*/
 
-footerxx {
-    background-color:#8DDEF6;
-}
+
 #mc_embed_signup_scroll{
     margin-left: -20px;
 }
@@ -307,6 +305,9 @@ footerxx {
     background-color:#8DDEF6;
 }
 
+.footer-section {
+    padding: 20px;
+}
 
 
 
@@ -349,7 +350,6 @@ footerxx {
 
 /* Bigger breathing space for icons */
 .navbar-nav .nav-link i.fa-user {
-  
   font-size: 1.1em;
 }
 
@@ -387,8 +387,22 @@ footerxx {
     margin-right: 2px;
 }
 
+
+
 /* Media Queries */
 
+@media screen  and (min-width: 992px) {
+  .increment-qty.btn-sm{
+    padding: .1rem .5rem !important;
+    border-radius: 0 20px 20px 0  !important;
+}
+
+.decrement-qty.btn-sm {
+    padding: .1rem .5rem !important;
+    border-radius: 20px 0 0 20px !important;
+}
+    
+}
 /* minimize padding and font size for header on mobiles */
 @media screen and (max-width: 991px) {
     .navbar-nav .nav-item {
@@ -445,9 +459,18 @@ footerxx {
         padding: .375rem .375rem;
         font-size: .9rem;
     }
+
+
     .increment-qty, .decrement-qty {
-        padding: .2rem .5rem !important;
+        padding: .1rem .3rem !important;
     }
+    .decrement-qty {
+        border-radius: 20px 0 0 20px !important;
+    }
+    .increment-qty {
+        border-radius: 0 20px 20px 0 !important;
+    }
+
     #menu-right {
         margin-top: 10px;
         margin-bottom: 10px;
