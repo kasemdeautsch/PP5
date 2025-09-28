@@ -392,7 +392,20 @@ main {
     margin-right: 2px;
 }
 
+/* About section */
+.about-text {
+    padding: 0 15px;
+}
 
+.increment-qty, .decrement-qty {
+        padding: .1rem .3rem !important;
+    }
+    .decrement-qty {
+        border-radius: 20px 0 0 20px !important;
+    }
+    .increment-qty {
+        border-radius: 0 20px 20px 0 !important;
+    }
 
 /* Media Queries */
 
@@ -435,6 +448,7 @@ main {
     .navbar-toggler {
         padding: .4rem;
         font-size: 1rem;
+        margin-right: 10px; /* give hamburger space from edge */
     }
     #delivery-banner h4 {
         font-size: 1rem;
@@ -466,15 +480,7 @@ main {
     }
 
 
-    .increment-qty, .decrement-qty {
-        padding: .1rem .3rem !important;
-    }
-    .decrement-qty {
-        border-radius: 20px 0 0 20px !important;
-    }
-    .increment-qty {
-        border-radius: 0 20px 20px 0 !important;
-    }
+    
 
     #menu-right {
         margin-top: 10px;
@@ -488,4 +494,51 @@ main {
         margin-top: 14px;
     }
 
+}
+
+/* Padding, center text, small headers */
+@media screen and (max-width: 567px) {
+    footer {
+    padding: 20px 15px;
+    text-align: center;
+  }
+  footer h3, footer h4 {
+    font-size: 1.2rem;
+  }
+  #mc_embed_signup form {
+    text-align: center;
+  }
+
+}
+
+/* Apply these only on tablets (768px–991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+
+  /* 1. Navbar padding (same as mobile) */
+  .navbar-toggler {
+    margin-right: 12px;
+  }
+  .about-section {
+    display: flex;
+    align-items: center;   /* vertically center image + text */
+    gap: 20px;             /* space between image & text */
+  }
+  .about-section img {
+    max-width: 200px;      /* shrink image so text has more space */
+  }
+  .about-section .about-text {
+    flex: 1;               /* text takes remaining width */
+  }
+  .opinion-section {
+    max-width: 600px;      /* keeps it same width as text above */
+  }
+  footer .col-12 {
+    padding: 10px 20px;
+  }
+}
+
+@media (min-width: 768px) {
+    #mc_embed_signup form {
+        margin-top: 0;
+    }
 }

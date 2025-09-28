@@ -1,0 +1,142 @@
+[
+{
+    "model": "profiles.userprofile",
+    "pk": 2,
+    "fields": {
+        "user": 3,
+        "default_phone_number": null,
+        "default_street_address1": null,
+        "default_street_address2": null,
+        "default_postcode": null,
+        "default_town_or_city": null,
+        "default_county": null,
+        "default_country": null
+    }
+},
+{
+    "model": "profiles.userprofile",
+    "pk": 3,
+    "fields": {
+        "user": 1,
+        "default_phone_number": "0567567577771",
+        "default_street_address1": "123 dtt000",
+        "default_street_address2": "any",
+        "default_postcode": "54567",
+        "default_town_or_city": "Stuttgart",
+        "default_county": null,
+        "default_country": "BR"
+    }
+},
+{
+    "model": "profiles.userprofile",
+    "pk": 4,
+    "fields": {
+        "user": 4,
+        "default_phone_number": null,
+        "default_street_address1": null,
+        "default_street_address2": null,
+        "default_postcode": null,
+        "default_town_or_city": null,
+        "default_county": null,
+        "default_country": null
+    }
+},
+{
+    "model": "profiles.userprofile",
+    "pk": 5,
+    "fields": {
+        "user": 5,
+        "default_phone_number": null,
+        "default_street_address1": null,
+        "default_street_address2": null,
+        "default_postcode": null,
+        "default_town_or_city": null,
+        "default_county": null,
+        "default_country": null
+    }
+},
+{
+    "model": "profiles.userprofile",
+    "pk": 6,
+    "fields": {
+        "user": 6,
+        "default_phone_number": null,
+        "default_street_address1": null,
+        "default_street_address2": null,
+        "default_postcode": null,
+        "default_town_or_city": null,
+        "default_county": null,
+        "default_country": null
+    }
+},
+{
+    "model": "profiles.userprofile",
+    "pk": 7,
+    "fields": {
+        "user": 7,
+        "default_phone_number": null,
+        "default_street_address1": null,
+        "default_street_address2": null,
+        "default_postcode": null,
+        "default_town_or_city": null,
+        "default_county": null,
+        "default_country": null
+    }
+},
+{
+    "model": "profiles.userprofile",
+    "pk": 8,
+    "fields": {
+        "user": 8,
+        "default_phone_number": null,
+        "default_street_address1": null,
+        "default_street_address2": null,
+        "default_postcode": null,
+        "default_town_or_city": null,
+        "default_county": null,
+        "default_country": null
+    }
+},
+{
+    "model": "profiles.userprofile",
+    "pk": 9,
+    "fields": {
+        "user": 9,
+        "default_phone_number": null,
+        "default_street_address1": null,
+        "default_street_address2": null,
+        "default_postcode": null,
+        "default_town_or_city": null,
+        "default_county": null,
+        "default_country": null
+    }
+},
+{
+    "model": "profiles.userprofile",
+    "pk": 10,
+    "fields": {
+        "user": 10,
+        "default_phone_number": "056756756700",
+        "default_street_address1": "123 dtt",
+        "default_street_address2": "any",
+        "default_postcode": "73655",
+        "default_town_or_city": "Stuttgart",
+        "default_county": null,
+        "default_country": "DE"
+    }
+},
+{
+    "model": "profiles.userprofile",
+    "pk": 11,
+    "fields": {
+        "user": 11,
+        "default_phone_number": null,
+        "default_street_address1": null,
+        "default_street_address2": null,
+        "default_postcode": null,
+        "default_town_or_city": null,
+        "default_county": null,
+        "default_country": null
+    }
+}
+]

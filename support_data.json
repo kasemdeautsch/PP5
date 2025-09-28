@@ -1,0 +1,106 @@
+[
+{
+    "model": "support.faqs",
+    "pk": 1,
+    "fields": {
+        "question": "Which laptop brands do you sell?",
+        "answer": "We offer laptops from Dell, Lenovo, HP, and Apple, all at affordable prices and with a satisfaction guarantee."
+    }
+},
+{
+    "model": "support.faqs",
+    "pk": 2,
+    "fields": {
+        "question": "Are your laptops new or refurbished?",
+        "answer": "We offer only new and certified laptops."
+    }
+},
+{
+    "model": "support.faqs",
+    "pk": 3,
+    "fields": {
+        "question": "What does your guarantee cover?",
+        "answer": "Our guarantee covers manufacturing defects and hardware failures for a specified period after purchase. Details are included with each product."
+    }
+},
+{
+    "model": "support.faqs",
+    "pk": 4,
+    "fields": {
+        "question": "How do I know which laptop is right for me?",
+        "answer": "You can filter laptops by brand, price and processor to find the best fit for your needs."
+    }
+},
+{
+    "model": "support.faqs",
+    "pk": 5,
+    "fields": {
+        "question": "How do I place an order?",
+        "answer": "Simply select your laptop, add it to your cart, and proceed to checkout."
+    }
+},
+{
+    "model": "support.faqs",
+    "pk": 6,
+    "fields": {
+        "question": "What payment methods do you accept?",
+        "answer": "We accept major credit cards, debit cards, and other secure online payment options."
+    }
+},
+{
+    "model": "support.faqs",
+    "pk": 7,
+    "fields": {
+        "question": "Is my payment information secure?",
+        "answer": "Yes, all transactions are encrypted and processed through secure payment gateways."
+    }
+},
+{
+    "model": "support.faqs",
+    "pk": 8,
+    "fields": {
+        "question": "How long will it take to receive my order?",
+        "answer": "Delivery times vary by location and shipping method, but most orders are shipped within 3û4 business days."
+    }
+},
+{
+    "model": "support.faqs",
+    "pk": 9,
+    "fields": {
+        "question": "Do you ship internationally?",
+        "answer": "Currently, we only ship within Europe. Please check our shipping policy for details."
+    }
+},
+{
+    "model": "support.faqs",
+    "pk": 10,
+    "fields": {
+        "question": "What is your return policy?",
+        "answer": "You may return your laptop within 15 days of delivery for a full refund or exchange, provided it is in its original condition."
+    }
+},
+{
+    "model": "support.faqs",
+    "pk": 11,
+    "fields": {
+        "question": "What do I do if I receive a defective product?",
+        "answer": "Contact us immediately. We will arrange a replacement or refund, depending on your preference."
+    }
+},
+{
+    "model": "support.faqs",
+    "pk": 12,
+    "fields": {
+        "question": "How do I contact customer support?",
+        "answer": "You can reach us via email, Our contact information is available on the About page."
+    }
+},
+{
+    "model": "support.faqs",
+    "pk": 13,
+    "fields": {
+        "question": "Do you offer technical support?",
+        "answer": "Yes, we provide technical support for all products sold on our website."
+    }
+}
+]

@@ -1,0 +1,102 @@
+[
+{
+    "model": "about.about",
+    "pk": 1,
+    "fields": {
+        "title": "Title1",
+        "content": "new contents",
+        "updated_on": "2025-06-24T12:41:27.528Z",
+        "image": ""
+    }
+},
+{
+    "model": "about.about",
+    "pk": 2,
+    "fields": {
+        "title": "Title2",
+        "content": "new contents and requests",
+        "updated_on": "2025-06-24T12:41:52.402Z",
+        "image": ""
+    }
+},
+{
+    "model": "about.about",
+    "pk": 3,
+    "fields": {
+        "title": "About the Developer",
+        "content": "Kasem Al shadidi, is a Syrian nationality person who has a degree of Science in copmuter\r\nand worked several years in IT-Support in Kuwait, and his dream was to be a developper\r\nand to be a web designer, but his budget didn't allow him to take such a course in Full-stack software\r\ndevelopper as the course teaches so many techniques and programming languages, and cost\r\nso much.\r\n\r\nAs he moved to Germany lately he found that the government supports such people who want to \r\nimprove their career, he could finaly attend that powerfull course whom he dreamed.\r\n\r\nWith the \"Agentur fⁿr Arbeit\" in Stuttgart he got a \"Gutschein\" (voucher) to attend acourse of  Full-stack software developper with Code Institute, he wants now to show what he learnt to the world\r\nhelp him to improve the website and tell us what you suggest.",
+        "updated_on": "2025-09-22T07:44:46.024Z",
+        "image": ""
+    }
+},
+{
+    "model": "about.collaboraterequest",
+    "pk": 1,
+    "fields": {
+        "name": "test-6",
+        "email": "any-tt@gmail.com",
+        "message": "good day",
+        "read": false
+    }
+},
+{
+    "model": "about.collaboraterequest",
+    "pk": 2,
+    "fields": {
+        "name": "ali",
+        "email": "sds@kjdfb.nt",
+        "message": "new msg",
+        "read": true
+    }
+},
+{
+    "model": "about.collaboraterequest",
+    "pk": 3,
+    "fields": {
+        "name": "ali",
+        "email": "sds@kjdfb.nt",
+        "message": "new ms2",
+        "read": false
+    }
+},
+{
+    "model": "about.collaboraterequest",
+    "pk": 4,
+    "fields": {
+        "name": "ali",
+        "email": "sds@kjdfb.nt",
+        "message": "new ms22",
+        "read": false
+    }
+},
+{
+    "model": "about.collaboraterequest",
+    "pk": 5,
+    "fields": {
+        "name": "ali",
+        "email": "sds@kjdfb.mj",
+        "message": "gg",
+        "read": false
+    }
+},
+{
+    "model": "about.collaboraterequest",
+    "pk": 6,
+    "fields": {
+        "name": "mike",
+        "email": "any@gmail.com",
+        "message": "test message",
+        "read": false
+    }
+},
+{
+    "model": "about.collaboraterequest",
+    "pk": 7,
+    "fields": {
+        "name": "mark",
+        "email": "sds@kjdfb.org",
+        "message": "hiii",
+        "read": false
+    }
+}
+]

@@ -12,7 +12,7 @@
 
 {% block content %}
   <div class="container mt-5">
-    <div class="row">
+    <div class="row about-section">
         <!-- Image -->
         <div class="col-12 col-md-4 text-center">
             {% if about.image %}
@@ -22,7 +22,7 @@
             {% endif %}
         </div>
         <!-- About text -->
-        <div class="col-12 col-md-8 text-center text-md-left">
+        <div class="col-12 col-md-8 text-center text-md-left about-text">
             <h2 class="p-2">{{ about.title }}:</h2>
             <p class="text-black">{{ about.content }}</p>
             <p class="text-muted"><em>Updated on: </em>{{ about.updated_on }}</p>
@@ -30,7 +30,7 @@
     </div>
     <!-- Form  -->
     <div class="row">
-        <div class="col-12 col-md-8 offset-md-4 text-center text-md-left my-5">
+        <div class="col-12 col-md-8 offset-md-4 text-center text-md-left my-5 opinion-section">
             <h3 class="p-2">Your opinion is important!</h3>
             <p class="text-black p-2">
                 Whether you have a project in mind, wish to suggest
@@ -42,8 +42,8 @@
                 {% csrf_token %}
                 {{ form | crispy }}
                 <div class="text-left">
-                    <button type="submit" class="btn btn-info rounded-0">Submit</button>
-                    <a href="{% url 'products' %}" class="btn btn-secondary rounded-0">Keep Shopping</a>
+                    <button type="submit" class="btn btn-info rounded-0 ml-2">Submit</button>
+                    <a href="{% url 'products' %}" class="btn btn-secondary rounded-0 ml-2">Keep Shopping</a>
                 </div>
             </form>
         </div>

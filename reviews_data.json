@@ -1,0 +1,106 @@
+[
+{
+    "model": "reviews.reviews",
+    "pk": 1,
+    "fields": {
+        "user": 3,
+        "name": "ali",
+        "image": "business-man-avatar.png",
+        "rating": "5.00",
+        "review": "This Dell Inspiron 15.6\" laptop has everything I need for daily workùfast, reliable, and affordable. The touch screen is a real plus. I would highly recommend this to a friend!",
+        "created_on": "2025-06-25T14:55:03.160Z",
+        "updated_on": "2025-06-25T14:55:03.204Z"
+    }
+},
+{
+    "model": "reviews.reviews",
+    "pk": 2,
+    "fields": {
+        "user": 6,
+        "name": "jack",
+        "image": "male-avatar-image.jpg",
+        "rating": "3.00",
+        "review": "The laptop is fast and convenient, but the battery only lasts about 60 minutes. I have to keep it plugged in most of the time. No issues with the hardware, but the battery life is disappointing.",
+        "created_on": "2025-06-25T14:55:03.160Z",
+        "updated_on": "2025-06-25T14:55:03.204Z"
+    }
+},
+{
+    "model": "reviews.reviews",
+    "pk": 3,
+    "fields": {
+        "user": 7,
+        "name": "karin",
+        "image": "man-avatar.png",
+        "rating": "4.00",
+        "review": "Great laptop for the price and very user-friendly. However, I received a used and dirty laptop instead of a new one, which was frustrating. The replacement was fine, but quality control needs improvement.",
+        "created_on": "2025-06-25T14:55:03.160Z",
+        "updated_on": "2025-06-25T14:55:03.204Z"
+    }
+},
+{
+    "model": "reviews.reviews",
+    "pk": 4,
+    "fields": {
+        "user": 5,
+        "name": "mike",
+        "image": "",
+        "rating": "5.00",
+        "review": "Bought this Lenovo IdeaPad as a gift and itْs been fantastic! Great memory, good SSD size, and a full keyboard, Itْs lightweight and perfect for everyday tasks. Highly recommend for the price!",
+        "created_on": "2025-06-25T14:55:03.160Z",
+        "updated_on": "2025-06-28T17:13:50.781Z"
+    }
+},
+{
+    "model": "reviews.reviews",
+    "pk": 5,
+    "fields": {
+        "user": 5,
+        "name": "nora",
+        "image": "avatar-icon.png",
+        "rating": "1.00",
+        "review": "Lenovo laptops are good value, but customer support is terrible. My shipment was delayed with no ETA, and repair times are long. Product issues are frequent, making the overall experience frustrating.",
+        "created_on": "2025-06-25T14:55:03.160Z",
+        "updated_on": "2025-06-26T07:42:26.768Z"
+    }
+},
+{
+    "model": "reviews.reviews",
+    "pk": 6,
+    "fields": {
+        "user": 8,
+        "name": "sara",
+        "image": "avatar-image.png",
+        "rating": "5.00",
+        "review": "Wonderful laptop! Easy to use, fast downloads, and great features. I ordered it on sale and itْs much better value than comparable models elsewhere, Highly satisfied!",
+        "created_on": "2025-06-25T14:55:03.160Z",
+        "updated_on": "2025-06-25T18:39:18.484Z"
+    }
+},
+{
+    "model": "reviews.reviews",
+    "pk": 7,
+    "fields": {
+        "user": 4,
+        "name": "tom",
+        "image": "man-avatar-image-profil.png",
+        "rating": "4.00",
+        "review": "Generally happy, but I have issues with the touchpad and cursor as jumping around. Also, customer service is hard to reach, and there are some software glitches. Still, it works well once set up.\"",
+        "created_on": "2025-06-25T14:55:03.160Z",
+        "updated_on": "2025-06-25T18:20:22.276Z"
+    }
+},
+{
+    "model": "reviews.reviews",
+    "pk": 8,
+    "fields": {
+        "user": 5,
+        "name": "mike",
+        "image": "male-avatar-image_Ep6QDLr.jpg",
+        "rating": "1.00",
+        "review": "Problem-prone laptop. The memory was not functional, and it arrived with several issues. It became completely unusable after a week. Very disappointed.\"",
+        "created_on": "2025-06-25T14:55:03.160Z",
+        "updated_on": "2025-06-25T15:32:31.382Z"
+    }
+}
+]
