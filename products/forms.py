@@ -14,13 +14,6 @@ class ProductForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
         brands = Brand.objects.all()
         other_names = [(c.id, c.get_other_name()) for c in brands]
-        # for id, name in other_names:
-        #     print(f'id: {id}, name: {name}')
-
-        print('other_names: ', other_names)
-        # print('brands: ', brands)
-        # print('self.fields before: ', self.fields)
         self.fields['brand'].choices = other_names
-        # print('self.fields.items(): ', self.fields.items())
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'border-black rounded-0'

@@ -57,7 +57,6 @@ INSTALLED_APPS = [
     # others
     'crispy_forms',
     'storages',
-    'django_erd_generator',
 ]
 
 SITE_ID = 1
