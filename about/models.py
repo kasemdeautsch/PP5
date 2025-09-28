@@ -1,7 +1,5 @@
 from django.db import models
 
-# Blog post model
-
 
 class About(models.Model):
     """Stores a single about record"""
@@ -13,12 +11,9 @@ class About(models.Model):
     def __str__(self):
         return self.title
 
-#  Blog post model
-
 
 class CollaborateRequest(models.Model):
-    """Stores a single collaborate request"""
-
+    """Stores a single collaborate request record"""
     name = models.CharField(max_length=100)
     email = models.EmailField()
     message = models.TextField(max_length=5000)

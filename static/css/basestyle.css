@@ -9,6 +9,9 @@ html {
 }
 
 body {
+    min-height: calc(100vh - 518.44px ); /* full viewport height minus fixed header height */
+    display: flex;
+    flex-direction: column;
     color: #555;
     background-color: #f9f9f9;
     font-family: "Roboto", sans-serif;
@@ -286,9 +289,14 @@ These color codes were pulled directly from bootstrap CSS itself*/
 
 }
 
-/*Footer*/
+/* Main */
+main {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+}
 
-
+/* Footer */
 #mc_embed_signup_scroll{
     margin-left: -20px;
 }
@@ -352,9 +360,6 @@ These color codes were pulled directly from bootstrap CSS itself*/
 .navbar-nav .nav-link i.fa-user {
   font-size: 1.1em;
 }
-
-
-
 
 .dropdown-menu.p-2 {
   min-width: 350px !important;
@@ -482,23 +487,5 @@ These color codes were pulled directly from bootstrap CSS itself*/
         font-size: 1.2rem;
         margin-top: 14px;
     }
-/* 
-  .btn.btn-secondary.rounded-0,
-    .btn.btn-black.rounded-0 {
-        padding: .375rem .375rem;
-        font-size: .8rem;
-    }
-    .btn.btn-info.rounded-0 {
-        padding: .5rem;
-        font-size: .8rem;
-    }
-    .btn.btn-secondary.rounded-0.btn-lg,
-    .btn.btn-black.rounded-0.btn-lg {
-        padding: .375rem .375rem;
-        font-size: .7rem;
-    }
-    .btn.btn-info.rounded-0.btn-lg {
-        padding: .3rem;
-        font-size: .7rem;
-    } */
+
 }

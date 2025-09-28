@@ -31,6 +31,5 @@ urlpatterns = [
     path('reviews/', include('reviews.urls')),
     path('support/', include('support.urls')),
     path('', include('home.urls')),
-    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 handler404 = 'ecommerce.views.handler404'
