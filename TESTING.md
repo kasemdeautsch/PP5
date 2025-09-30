@@ -546,69 +546,33 @@ and data management.
 | ------------- |:-------------:| -----:|
 | Clicking on any product  | should navigate to that specific product page |Pass- as expected the button navigates to the specific product page|
 | Increment/decrement quantity using the -/+ buttons | should update the quantity in the input field accordingly |Pass- as expected the buttons increments/decrements and the quantity updates accordingly in the input field |
+| Clicking on "Add to Bag" button | should add that item with the quantity selected to the bag and a message shows the confirmation of the adding in the messages container |Pass- as expected the button adds the item with the quantity selected and a massage shows in the messages area |
 
-
-
-
-
-
-
-`Click on Buttons on home page`
+`My Bag Page`
 
 | Scenario        | Expected           | result  |
 | ------------- |:-------------:| -----:|
-| click on 'Book for a meal' button | 1. should navigate to make booking page. 2. should display a form to fill |1. Pass- as expected navigates to make booking page 2. Pass -  as expected a form is shown to fillout |
-| click on 'My Bookings' button | 1. should navigate to the list of bookings related to the loggedin user 2. when there is no bookings for that specific user, should show text that there is no bookings |1. Pass- as expected navigates to the list of bookings for the specific user 2. Pass - as expected if user has no bookings it says that 'you have no bookings'|
-
-`Click on Buttons on My Bookings page`
-
-The 'Edit' and 'Delete' buttons are assigned a dynamic data attribute that responds to user interactions  
-and apply an action using [Javascript](/static/js/script.js) code and was also tested manually:
-
-| Scenario        | Expected           | result  |
-| ------------- |:-------------:| -----:|
-| Click on 'Edit booking' button | 1. should navigate to a new page with the selected booking details 2. should be able to change any particular field detail  | 1. Pass- as expected when clicked navigates to new page with the selected booking details  2. Pass - as expected the user is able to change every detail in any field| 
-| Click on 'Delete booking' button | should display a modal with a confirm message | Pass- as expected when clicked a modal appears for confirmation|
+| Updating the quantities in the quantity form using +/- buttons | should update the quantity in the input filed |Pass- as expected the buttons update the quantities accordingly|
+| Clicking on "Update" button | should update the quantity for that product in the bag and a message confirms that |Pass- as expected the buttons update the quantities of the products accordingly and the message confirms that|
+| Clicking on "Remove Item" button | should remove the product from the bag and a message confirms that |Pass- as expected the buttons removes the product from the bag and the message shows|
+| Clicking on "Secure Checkout" button | should navigate to checkout page |Pass- as expected the buttons works and navigate to the secure checkout page|
 
 
-`Click on Buttons on Modal`
-
-The 'Delete' button on modal also have a dynamic [Javascript](/static/js/script.js) code and  
-was tested manually:
+`Checkout Page and test secure payment with Stripe`
 
 | Scenario        | Expected           | result  |
 | ------------- |:-------------:| -----:|
-| Click on 'Close' button|should do nothing and stays in the same page| Pass - as expected if the button clicked nothing haben and the user is still in the current page|
-| Click on 'Delete' button|1. should delete the booking from the list and stays in the same page 2. A successfull message should show to inform the user that the booking is deleted successfully | 1. Pass - as expected if the button clicked the booking is deleted from the list and user is still in the current page 2. Pass - as expected a successfull message of deletion is shown|
+| Clicking the "Complete order" button without filling the required fields or provide an invalid details| should not complete and a message under the field explains the issue  |Pass- as expected the operation not complete and a message appears under each fiels descripes the issue|
+| Filling the card field with an invalid card number| should not complete and a message under the payment card field shows that the card number is invalid |Pass- as expected the operation not complete and a message appears under the payment card field says that  the card number is invalid|
 
-` Make booking form`
+| Filling the card field with an invalid expiry-date/post-code/cvc | should not complete and a message under the payment card field shows that the expiry-date/post-code/cvc are invalid |Pass- as expected the operation not complete and a message appears under card that the expiry-date/post-code/cvc are invalid|
 
-| Scenario        | Expected           | result  |
-| ------------- |:---------------:| -----:|
-| name field |1. should accept only alphabets 2. should not allow the user to left blank because its required| 1. Pass - as expected it accepts only alphabets no numbers or spaces allowed 2. Pass - as expected when the field is blank the transaction can't be saved and prompts the user to enter avalid name|
-| date field |1. should accept a valid date entry only and displays apropriate message when the entry in not valid 2. should not allow the user to left blank because its required 3. should allow only bookings within one month|  1. Pass - as expected the field accepts only valid date entry and warns if the date is not valid  2. Pass - as expected when the field is blank the transaction can't be saved and prompts the user to enter a valid date 3. Pass - as expected the only dates allowed are in one month and a message is shown when trying to select a date like yesterday and after one month|
-| time field |the time field is mandatory and displays a list of the current times|Pass - as expected the field shows a list of times and cann't be lefted |
-| email field |1. the field is required and cann't be lefted blank 2. the field has a validation of correct email format | 1. Pass - as expected the field is required and cann't be lefted blank  2. Pass - as expected there is a validation on the field to accept only valid email format|
-| notes field |the field is not required and can be blank| Pass - as expected the user can leave the form without notes and the transaction can be saved |
+| Filling the checkout form with a complete details and a valid card number | should complete the order and navigates to checkout-success page and a message of confirmation apeears |Pass- as expected the operation completes and navigates to the checkout-success page with a message of confirmation|
+
+| Checkout-Success page | after completing the order and navigating to checkout-success page the success message shows with the order summary|Pass- as expected the operation completes and navigates to the checkout-success page with a message of confirmation and order summary|
 
 
-`Click on other Buttons 'Home' 'Back' 'Save' 'Update'`
 
-| Scenario        | Expected           | result  |
-| ------------- |:-------------:| -----:|
-| click on 'Home' button | should navigate to home page  |Pass- as expected navigates to home page |
-| click on 'Back' button | should navigate to previous page  |Pass- as expected navigates to previous page |
-| click on 'Save' button | 1. should save the transaction and display a message of successful 2. should take the user back to bookings page |1. Pass- as expected the transaction is saved and the message successful is shown 2. Pass - as expected the page navigates back to bookings page.|
-| click on 'Update' button | 1. should update the transaction and display a message of successful update 2. should take the user back to bookings page|1. Pass- as expected the transaction is saved and the message successful update is shown 2. Pass - as expected the page navigates back to bookings page.|
-
-`User Registration`
-
-| Scenario        | Expected           | result  |
-| ------------- |:-------------:| -----:|
-|username empty| If the username is blank prompts the user to fill the field | Pass - as expected, if the username field is blank, message shows to fill the username field |
-| email field is optional| the form will accepted without email address  |Pass - as expected, the form  accepted without email address as it is optional field|
-| Password field| 1. password can’t be too similar to  other personal information. 2. password must contain at least 8 characters. 3. password can’t be a commonly used password. 4.  password can’t be entirely numeric.| 1.Pass - as expected, when password entered was similar to the user id, message asking to enter a different password appears. 2. Pass - as expected, characters less than 8 are not expected and prompt the user to enter a minimum 8 characters. 3.Pass - as expected, password like testing0123 is not accepted and advises the user to choose a different password. 4.Pass - as expected, if the password entered is fully numeric like 1122334455, a message saying the password is fully numeric is displayed.
-| Signup button| Signup button should accept the valid data and get logged in and the user is redirected to home page| Pass - as expected, after valid data received signed in as the useruser and redirected to main page| 
 
 
 `Signing in`
@@ -625,18 +589,6 @@ was tested manually:
 | click on log out button in navbar | 1. Should prompt the user to confirm the logout. 2. on confirm by clicking signout. User should get signedout. 3. user cannot access booking list after signout | 1. Pass - as expected, user is prompted to confirm his logout. 2. Pass - as expected, when the signout button clicked the user gets signed out from his account. 3. Pass - as expected, user was unable to access the booking history after signout. | 
 
 
-`Django Admin administration`
-
-| Scenario        | Expected           | result  |
-| ------------- |:-------------:| -----:|
-| Can login only Superuser| 1. Should accept only the super user user id and password. 2. If a non superuser try to access a message  should display| 1. Pass - as expected, only the superuser user id and password is accepted. 2. Pass - as expected, when a non superuser try to log in the admin a message "Please enter the correct username and password for a staff account. Note that both fields may be case-sensitive." displayed.| 
-| All reservations| Superuser/admin can see all reservations like with name, date and time.| Pass - when he login he sees the reservation model and when clicked the reservations lis shows all reservations with name, date and time. | 
-|    | Superuser/admin can filter reservations by date and name..|  Pass - he can do the filtering as mentioned | 
-|  | Superuser/admin can search for a reservation by name. | Pass - he can search for a reservation by name. | 
-| | Superuser/admin can create new reservation |  Pass - when click on add reservation he can fill in all fields and save the transaction  | 
-|  |Superuser/admin can delete a reservation | Pass - he can delete a given one | 
-|  |Superuser/admin can update a reservation | Pass - he can update all fields for a given one | 
-|  |changes reflected in the reservations list | Pass - after updating or deleting, all changes are reflected | 
 
 
 
