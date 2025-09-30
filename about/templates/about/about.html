@@ -25,7 +25,7 @@
         <div class="col-12 col-md-8 text-center text-md-left about-text">
             <h2 class="p-2">{{ about.title }}:</h2>
             <p class="text-black">{{ about.content }}</p>
-            <p class="text-muted"><em>Updated on: </em>{{ about.updated_on }}</p>
+            <p><em>Updated on: </em>{{ about.updated_on }}</p>
         </div>
     </div>
     <!-- Form  -->
@@ -38,7 +38,7 @@
                 I will be glad to hear from you. Fill out the form
                 and we can get the ball rolling!
             </p>
-            <form action="" method="POST">
+            <form method="POST">
                 {% csrf_token %}
                 {{ form | crispy }}
                 <div class="text-left">

@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col">
                 <hr>
-                <h2 class=" p-2 m-2">People Reviews:</h2>
+                <h4 class=" p-2 m-2">People Reviews:</h4>
                 <hr>
             </div>
         </div>
@@ -33,7 +33,6 @@
                             <h5 class="card-title review-date"> Updated: <span class="small">{{ review.updated_on }}</span></h5>
                             <h6 class="card-subtitle mb-2 text-muted">Rated: {{ review.rating}} / 5</h6>
                             <p class="card-text">
-
                                 {{ review }}
                             </p>
                             <a href="{% url 'products' %}" class="btn btn-secondary">Keep Shopping</a>

@@ -15,7 +15,7 @@
             <div class="col-12 col-md-6">
                 <hr>
                 <h2 class="logo-font mb-4">Product Management</h2>
-                <h5 class="text-muted">Edit a Product</h5>
+                <h3 class="text-muted">Edit a Product</h3>
                 <hr>
             </div>
         </div>
@@ -43,10 +43,10 @@
 {% block loadjs %}
     {{ block.super }}
     <!-- Display the image name in the div when selected -->
-    <script type="text/javascript">
+    <script>
         $('#new-image').change(function() {
             var file = $('#new-image')[0].files[0];
-            $('#filename').text(`image will be set to:${file.name}`)
-        })
+            $('#filename').text(`image will be set to:${file.name}`);
+        });
     </script>
 {% endblock %}

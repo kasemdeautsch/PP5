@@ -27,40 +27,88 @@ Below the screenshots for each page:
 
 **Landing page**
 
-![](/static/images/testing/test-landingpage.png)
+![](/media/readme/testing/landing-page-test.png)
 
-**Home page**
+**About page**
 
-![](/static/images/testing/test-homepage.png)
+![](/media/readme/testing/about-page-test.png)
 
-**Bookings page**
+**Faqs page**
 
-![](/static/images/testing/test-reservations.png)
+![](/media/readme/testing/faqs-page-test.png)
 
-**Edit booking page**
+**Reviews page**
 
-![](/static/images/testing/test-edit.png)
+![](/media/readme/testing/reviews-page-test.png)
 
-**Delete booking page**
 
-![](/static/images/testing/test-delete.png)
+**Products page**
 
-**Delete booking page**
+![](/media/readme/testing/products-page-test.png)
 
-![](/static/images/testing/test-delete.png)
+
+**Product-Details  page**
+
+![](/media/readme/testing/productdetails-page-test.png)
+
+
+**Checkout page**
+
+![](/media/readme/testing/checkout-page-test.png)
+
+Here I found only 1 warning about the empty "h1" tag as it is filled out with a spinner and I can't write text inside
+
+**Checkout-Success page**
+
+![](/media/readme/testing/checkout-success-page-test.png)
+
+
+**Bag page**
+
+![](/media/readme/testing/bag-page-test.png)+++++++++++++++++
+
+
+**Profile page**
+
+![](/media/readme/testing/profile-page-test.png)
+
+
+**Add Product page**
+
+![](/media/readme/testing/addproduct-page-test.png)
+
+
+**Edit Product page**
+
+![](/media/readme/testing/editproduct-page-test.png)
+
+
+
+
+
+
+
+
+
+
 
 **Login page**
 
-![](/static/images/testing/test-login.png)
-![](/static/images/testing/test-login2.png)
+![](/media/readme/testing/login-page-test.png)
+
 
 **Logout page**
 
-![](/static/images/testing/test-logout.png)
+![](/media/readme/testing/logout-page-test.png)
+
+**Forget Password page**
+
+![](/media/readme/testing/forgetpass-page-test.png)
+
 
 **Signup page**
 
-![](/static/images/testing/test-signup.png)
+![](/media/readme/testing/login-page-test.png)++++++++++++++
 
 
 
@@ -68,16 +116,43 @@ Below the screenshots for each page:
 
 CSS code was tseted using the [W3C CSS Validator Service](https://jigsaw.w3.org/css-validator/)
 
-![](/static/images/testing/test-css.png)
+
+ - Basestyle.css
+ ![](/media/readme/testing/base-css-test.png)
+
+  No errors found only some warnings
+
+  - Checkout.css
+ ![](/media/readme/testing/base-css-test.png)
+
+  No errors found only 1 warnings about the -webkit-transition which is not a vendor extension
+
+  - Profiles.css
+ ![](/media/readme/testing/profile-css-test.png)
+
+ - Support.css
+ ![](/media/readme/testing/support-css-test.png)
 
 <u>[Back To Top](#table)</u>
 
 **JavaScript**
 
-Js Code was tseted using the [Jshint Tool](https://jshint.com/) and found only one warning about the  
-function within foor loop.
+Js Code was tseted using the [Jshint Tool](https://jshint.com/) and found the next results:
 
-![](/static/images/testing/test-js.png)
+- stripe_elements.js
+
+ ![](/media/readme/testing/elemens-js-test.png)
+
+- countryField.js
+
+ ![](/media/readme/testing/countryfield-js-test.png)
+
+ - quantity_script
+
+ ![](/media/readme/testing/-js-test.png)
+
+
+ I tested all the "Scripts" inside all "HTML" documents and found no errors.
 
 
 <u>[Back To Top](#table)</u>
@@ -90,33 +165,128 @@ Results for all 'Python' files:
 
 **settings.py**
 
-![](/static/images/testing/test-settings.png)
+![](/media/readme/testing/urls-py-test.png)
 
 The warnings in the image are related to Django code and was not changed.
 
 **urls.py**
 
-![](/static/images/testing/test-urls.png)
+![](/media/readme/testing/urls-py-test.png)
 
-**admin.py**
+ I tested all thee "urls.py" files for all "apps" and found no errors.
 
-![](/static/images/testing/test-admin.png)
+**admins.py**
 
-**booking.urls.py**
+- about.admin.py
 
-![](/static/images/testing/test-booking.urls.png)
+  ![](/media/readme/testing/about-admin-test.png)
+
+- checkout.admin.py
+
+  ![](/media/readme/testing/checkout-admin-test.png)
+
+- products.admin.py
+
+  ![](/media/readme/testing/products-admin-test.png)
+
+- profiles.admin.py
+
+  ![](/media/readme/testing/profiles-admin-test.png)
+
+- reviews.admin.py
+
+  ![](/media/readme/testing/reviews-admin-test.png)
+
+- support.admin.py
+
+  ![](/media/readme/testing/faqs-admin-test.png)
+
 
 **forms.py**
 
-![](/static/images/testing/test-forms.png)
+- collaborate-form
+
+  ![](/media/readme/testing/collaborate-form-test.png)
+
+- order-form
+
+  ![](/media/readme/testing/order-form-test.png)
+
+- products-form
+
+  ![](/media/readme/testing/products-form-test.png)
+
+- profiles-form
+
+  ![](/media/readme/testing/profiles-form-test.png)
+
+
+
 
 **models.py**
 
-![](/static/images/testing/test-models.png)
+- about-model
+
+![](/media/readme/testing/about-model-test.png)
+
+- checkout-model
+
+![](/media/readme/testing/checkout-model-test.png)
+
+- products-model
+
+![](/media/readme/testing/products-model-test.png)
+
+- profiles-model
+
+![](/media/readme/testing/profiles-model-test.png)
+
+- reviews-model
+
+![](/media/readme/testing/reviews-model-test.png)
+
+- faqs-model
+
+![](/media/readme/testing/faqs-model-test.png)
+
+
+
 
 **views.py**
 
-![](/static/images/testing/test-views.png)
+- about-views
+
+![](/media/readme/testing/about-view-test.png)
+
+- bag-views
+
+![](/media/readme/testing/bag-view-test.png)
+
+- checkout-views
+
+![](/media/readme/testing/checkout-view-test.png)
+
+- home-views
+
+![](/media/readme/testing/home-view-test.png)
+
+- products-views
+
+![](/media/readme/testing/products-view-test.png)
+
+- profiles-views
+
+![](/media/readme/testing/profiles-view-test.png)
+
+- reviews-views
+
+![](/media/readme/testing/reviews-view-test.png)
+
+- faqs-views
+
+![](/media/readme/testing/faqs-view-test.png)
+
+
 
 <u>[Back To Top](#table)</u>
 
@@ -128,87 +298,159 @@ A Lighthouse testing was done in the local enviroment using Chrome DevTools in i
 to check the performance, accessibility, best practice and SEO.
 
 **Landing page**
+
 - mobile
 
-  ![](/static/images/testing/light-mobile-landing.png)
+  ![](/media/readme/testing/landing-page-mobile-test.png)
 
 - desktop
 
-  ![](/static/images/testing/light-desktop-landing.png)
+  ![](/media/readme/testing/landing-page-desktop-test.png)
 
-**Home page**
+**About page**
+
 - mobile
 
-  ![](/static/images/testing/light-mobile-home.png)
+  ![](/media/readme/testing/about-page-mobile-test.png)
 
 - desktop
 
-  ![](/static/images/testing/light-desktop-home.png)
+  ![](/media/readme/testing/about-page-desktop-test.png)
 
-**Bookings list page**
+**Faqs page**
+
 - mobile
 
-  ![](/static/images/testing/light-mobile-bookings.png)
+  ![](/media/readme/testing/faqs-page-mobile-test.png)
 
 - desktop
 
-  ![](/static/images/testing/light-desktop-bookings.png)
+  ![](/media/readme/testing/faqs-page-desktop-test.png)
 
-**Edit Bookings page**
+**Reviews page**
+
 - mobile
 
-  ![](/static/images/testing/light-mobile-edit.png)
+  ![](/media/readme/testing/reviews-page-mobile-test.png)
 
 - desktop
 
-  ![](/static/images/testing/light-desktop-edit.png)
+  ![](/media/readme/testing/reviews-page-desktop-test.png)
 
-**Make booking page**
+**Products page**
+
 - mobile
 
-  ![](/static/images/testing/light-mobile-make.png)
+  ![](/media/readme/testing/products-page-mobile-test.png)
 
 - desktop
 
-  ![](/static/images/testing/light-desktop-make.png)
+  ![](/media/readme/testing/products-page-desktop-test.png)
 
-**Delete booking page**  
-When I tested the page that contains a 'modal' I got the next result:
+**Product-details page**
+
 - mobile
 
-  ![](/static/images/testing/light-mobile-delete.png)
+  ![](/media/readme/testing/productdetails-page-mobile-test.png)
 
 - desktop
 
-  ![](/static/images/testing/light-desktop-delete.png)
+  ![](/media/readme/testing/productdetails-page-desktop-test.png)
+
+**Add-product page**
+
+- mobile
+
+  ![](/media/readme/testing/addproduct-page-mobile-test.png)
+
+- desktop
+
+  ![](/media/readme/testing/addproduct-page-desktop-test.png)
+
+**Edit-product page**
+
+- mobile
+
+  ![](/media/readme/testing/editproduct-page-mobile-test.png)
+
+- desktop
+
+  ![](/media/readme/testing/editproduct-page-desktop-test.png)
+
+**Profiles page**
+
+- mobile
+
+  ![](/media/readme/testing/profile-page-mobile-test.png)
+
+- desktop
+
+  ![](/media/readme/testing/profile-page-desktop-test.png)
+
+**Checkout page**
+
+- mobile
+
+  ![](/media/readme/testing/checkout-page-lighthouse-test.png)
+
+- desktop
+
+  ![](/media/readme/testing/checkout-page-lighthouse-test.png)
+
+  I found an issue for Accessibility that there is an element with "[aria-hidden="true"]" contain focusable descendents, which is the card element and prevent those interactive elements from being available to users of assistive, I searched and asked th "AI" and found that I don’t need to (and shouldn’t) fix this.
+  That hidden <input> is part of Stripe’s accessibility implementation. It’s used internally for security and autofill handling. Stripe marks it aria-hidden="true" and opacity: 0 to keep screen readers away, while routing real focus to the secure iframe.
+
+**Checkout-success page**
+
+- mobile
+
+  ![](/media/readme/testing/checkout-success-page-mobile-test.png)
+
+- desktop
+
+  ![](/media/readme/testing/checkout-success-page-desktoptest.png)
+
+
+
+
+
+
+
+
+
+
 
 **Sign in page**
+
 - mobile
 
-  ![](/static/images/testing/light-mobile-signin.png)
+  ![](/media/readme/testing/signin-page-mobile-test.png)
+
 
 - desktop
 
-  ![](/static/images/testing/light-desktop-signin.png)
+  ![](/media/readme/testing/signin-page-desktop-test.png)
+
 
   **Logout page**
+
 - mobile
 
-  ![](/static/images/testing/light-mobile-logout.png)
+  ![](/media/readme/testing/signout-page-mobile-test.png)
 
 - desktop
 
-  ![](/static/images/testing/light-desktop-logout.png)
+  ![](/media/readme/testing/signout-page-desktope-test.png)
 
 
   **Sign up page**
 - mobile
 
-  ![](/static/images/testing/light-mobile-signup.png)
+  !![](/media/readme/testing/register-page-mobile-test.png)
 
 - desktop
 
-  ![](/static/images/testing/light-desktop-signup.png)
+  ![](/media/readme/testing/register-page-desktop-test.png)
 
 
 <u>[Back To Top](#table)</u>
@@ -220,19 +462,18 @@ When I tested the page that contains a 'modal' I got the next result:
 The site is responsive for mobiles, tablets, labtops and extra screen sizes, it was tested  
 manualy using Chrome DevTools and using the [Am I Responsive tool](https://ui.dev/amiresponsive)
 
-iPhone SE:  
-![](/static/images/testing/iPhone-SE.png)
+
 
 Mobile Galaxy-s8:  
-![](/static/images/testing/Galaxy-S8.png)
+![](/media/readme/testing/galaxy.png)
 
 iPad Mini:  
-![](/static/images/testing/iPad-Mini.png)
+![](/media/readme/testing/ipadmini-pro.png)
 
 Desktop:  
-![](/static/images/testing/desktop.png)
+![](/media/readme/testing/desktop.png)
 
-![](/static/images/main.png)
+![](/media/readme/testing/home-page.png)
 
 <u>[Back To Top](#table)</u>
 
@@ -242,17 +483,7 @@ Desktop:
 
 I tested the site on Chrome, Edge and Firefox and it was working good:
 
-`Chrome`
 
-![](/static/images/testing/chrome.png)
-
-`Edge`
-
-![](/static/images/testing/edge.png)
-
-`Firefox`
-
-![](/static/images/testing/firefox.png)
 
 
 <u>[Back To Top](#table)</u>
@@ -276,19 +507,51 @@ and data management.
 | Scenario        | Expected           | result  |
 | ------------- |:-------------:| -----:|
 | click on brand name | should navigate to home page  |Pass- as expected navigates to homepage |
-| click on home  | should navigate to home page  |Pass- as expected navigates to homepage | 
+| click on About  | should navigate to about page  |Pass- as expected navigates to aboutpage |
+| click on Reviews  | should navigate to reviews page  |Pass- as expected navigates to reviewspage |
+| click on Faqs  | should navigate to faqs page  |Pass- as expected navigates to faqspage |
+| click on All-Products  | should navigate to products page  |Pass- as expected navigates to productspage |
+| Sort products by price/rating/brand  | should sort the products by this key   |Pass- as expected the products appears sorted according to the key selected |
+| Filter products a specific brand | should show only products related to that specific brand |Pass- as expected the results shows only the products related to that specific brand|
+| Filter Special offers by Deals/Clearance | should show only products in that offer |Pass- as expected the results shows only the products in the  specific offer|
+| Use the search form to search for a specific product name or processor model | should show only products with that name or processor model |Pass- as expected the results shows only the products with that name or processor model|
 | click on register | should navigate to registration page  |Pass- as expected navigates to sign up page|
 | click on login  | should navigate to sign in page  |Pass- as expected navigates to sign in page|
 | click on logout | should navigate to sign out page  |Pass- as expected navigates to sign out page |
+| click on Bag icon | should navigate to my bag page  |Pass- as expected navigates to my bag page |
 
-`Social links in Footer`
+`Links in Footer`
 
 | Scenario        | Expected           | result  |
 | ------------- |:-------------:| -----:|
-| click on facebook icon  | should opens facebook site in new tab  |Pass- as expected navigates to a new window and opens facebook |
-| click on twitter icon  | should opens twitter site in new tab  |Pass- as expected navigates to a new window and opens twitter |
-| click on youtube icon  | should opens youtube site in new tab  |Pass- as expected navigates to a new window and opens youtube |
-| click on instagram icon  | should opens instagram site in new tab  |Pass- as expected navigates to a new window and opens instagram |
+| click on Social-facebook icon  | should opens business-facebook site in new tab  |Pass- as expected navigates to a new window and opens the business-facebook page|
+| click on Subscribe button with an email  | should show the message "Thank you for subscribing!"  |Pass- as expected the form works and displays the desired message|
+| click on Privacy Policy icon  | should opens the privacy policy of the website in a new tab|Pass- as expected navigates to a new window and opens th privacy policy of the websitetube |
+
+`About Form`
+
+| Scenario        | Expected           | result  |
+| ------------- |:-------------:| -----:|
+| Filling the form and click on Submit button  | should submit and the message "Thank you for your collaboration..."  appears in the top upper right |Pass- as expected the form submits and the message shows|
+
+`Buttons on Reviews/Faqs Pages`
+
+| Scenario        | Expected           | result  |
+| ------------- |:-------------:| -----:|
+| Clicking the button Keep Shopping  | should navigate to products page |Pass- as expected the button navigates to products page|
+
+`Product-Details Page`
+
+| Scenario        | Expected           | result  |
+| ------------- |:-------------:| -----:|
+| Clicking on any product  | should navigate to that specific product page |Pass- as expected the button navigates to the specific product page|
+| Increment/decrement quantity using the -/+ buttons | should update the quantity in the input field accordingly |Pass- as expected the buttons increments/decrements and the quantity updates accordingly in the input field |
+
+
+
+
+
+
 
 `Click on Buttons on home page`
 

@@ -1,4 +1,3 @@
-
 // Create card element and add styling
 var stripePublicKey = $('#id_stripe_public_key').text().slice(1,-1);
 var clientSecret = $('#id_client_secret').text().slice(1,-1);
@@ -37,11 +36,11 @@ card.addEventListener('change', function(e) {
         <span class="icon" role="alert">
             <i class="fas fa-times"></i>
         </span>
-        <span>${e.error.message}..</span>
-        `
+        <span>${e.error.message}</span>
+        `;
         $(errorDiv).html(html);
     } else{
-        $(errorDiv).text('')
+        $(errorDiv).text('');
     }
 });
 
@@ -113,5 +112,5 @@ form.addEventListener('submit', function(event) {
     }).fail(function() {
         // Only reload the page, the error will be in django messages
         location.reload();
-    })
+    });
 });

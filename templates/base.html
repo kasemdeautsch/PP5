@@ -25,7 +25,7 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
         <!-- Mailchimp signup form CSS -->
-        <link  rel="stylesheet" href="//cdn-images.mailchimp.com/embedcode/classic-061523.css"type="text/css">
+        <link  rel="stylesheet" href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" type="text/css">
         <!-- Custom Css -->
         <link rel="stylesheet" href="{% static 'css/basestyle.css' %}">
     {% endblock %}
@@ -236,7 +236,7 @@
                     <div id="mc_embed_signup">
                         <form action="https://gmail.us11.list-manage.com/subscribe/post?u=3c0feb4c7ec4c26d9f25c15ea&amp;id=5577e6831d&amp;f_id=0015e5e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
                             <div id="mc_embed_signup_scroll">
-                              <h3>Subscribe!</h2>
+                              <h3>Subscribe!</h3>
                               <p>Subscribing to our monthly newsletter and get exclusive offers and discounts</p>
                               <div class="indicates-required">
                                 <span class="asterisk">*</span> 
@@ -279,8 +279,8 @@
     <!-- /footer -->
 
     <!-- Script for mailchimp signup form -->
-    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-    <script type="text/javascript">
+    <script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+    <script>
       (function($) {
         window.fnames = new Array(); 
         window.ftypes = new Array();
@@ -303,7 +303,7 @@
     </script>
     {% block loadjs %}
     <!-- Display toasts -->
-    <script type="text/javascript">
+    <script>
       $('.toast').toast('show');
     </script>
     {% endblock %}

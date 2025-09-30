@@ -43,8 +43,8 @@
                 {% endif %}
                 {% if request.user.is_superuser %}
                     <small class="ml-3">
-                        <a href="{% url 'edit_product' product.id %}">Edit</a> |
-                        <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                        <a class="product-links" href="{% url 'edit_product' product.id %}">Edit</a> |
+                        <a class="text-danger product-links" href="{% url 'delete_product' product.id %}">Delete</a>
                     </small>
                 {% endif %}
                 <p class="">Sku: <span class="ml-1">{{ product.sku }}</span> </p>
@@ -73,16 +73,19 @@
                                             data-item_id="{{ product.id }}">
                                             <span class="icon">
                                                 <i class="fas fa-minus"></i>
+                                                <i class="sr-only">decrement quantity</i>
                                             </span>
                                         </button>
                                     </div>
+                                    <label class="sr-only" for="qty_id{{ product.id }}">item quantity</label>
                                     <input class="form-control qty_input id_qty_{{ product.id }}" type="number" 
-                                       name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}">
+                                       name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}" id="qty_id{{ product.id }}">
                                     <div class="input-group-append">
                                         <button class="increment-qty btn btn-black rounded-0 increment-qty_{{ product.id }}"
                                         data-item_id="{{ product.id }}">
                                         <span class="icon">
                                             <i class="fas fa-plus"></i>
+                                            <i class="sr-only">increment quantity</i>
                                         </span>
                                     </button>
                                     </div>

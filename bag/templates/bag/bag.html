@@ -118,30 +118,29 @@
 {% block loadjs %}
 {{ block.super }}
 {% include 'products/includes/quantity_script.html' %}
-<script type="text/javascript">
-    var btt = document.getElementsByClassName('btt-link')[0]
-    console.log(btt)
+<script>
+    var btt = document.getElementsByClassName('btt-link')[0];
     btt.addEventListener("click" ,(e)=> {
-        window.scrollTo(0,0)
-    })
+        window.scrollTo(0,0);
+    });
 </script>
 
-<script type="text/javascript">
+<script>
     // Bring the form('.update-form') to submit
     $('.update-link').click(function(e){
         var form = $(this).prev('.update-form');
         form.submit();
-    })
+    });
     // Post to view with needed data
     $('.remove-item').click(function(e) {
         var csrfToken = "{{ csrf_token }}";
         var itemId = $(this).attr('id').split('remove_')[1];
         var url = `/bag/remove/${itemId}/`;
-        var data = {'csrfmiddlewaretoken': csrfToken}
+        var data = {'csrfmiddlewaretoken': csrfToken};
         $.post(url, data)
          .done(function() {
             location.reload();
         });
-    })
+    });
 </script>
 {% endblock %}
